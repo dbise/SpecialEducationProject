@@ -1,3 +1,0 @@
-Could I get a code review on this?
-
-print('Hello World')
