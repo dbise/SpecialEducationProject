@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    background-color: gainsboro;
+}
+.logo {
+    width: auto;
+    height: 50px;
+    padding: 5px;
+    background-color: lightskyblue;
+}
+.navItem {
+    line-height: 50px;
+    color: dimgray;
+    font-family: Arial;
+    font-size: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.navItem:hover {
+    background-color: lightgray;
+    background-size: 50px;
+}
+.navItem:active {
+    background-color: silver;
+    background-size: 50px;
+}
+.navBar {
+    display: flex;
+    align-items: center;
+    padding-left: 45px;
+}
+.profile {
+    width: auto;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    padding-left: 15px;
+}
+.border {
+    position: fixed;
+    right: 85px;
+    color: silver;
+    font-weight: 1000;
+    font-size: 25px;
+}
+@media screen and (max-width: 700px){
+    .navItem {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .navBar {
+        padding-left: 15px;
+    }
+}
