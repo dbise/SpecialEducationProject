@@ -1,0 +1,34 @@
+.dropdown {
+    position: fixed;
+    list-style-type: none;
+    width: 150px;
+    right: 8px;
+    top: 56px;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.userName {
+    position: relative;
+    text-align: left;
+    padding: 5px;
+    color: dimgray;
+    border-bottom: 1px solid lightgray;
+}
+.listItem {
+    text-align: left;
+    padding: 5px;
+    color: dimgray;
+}
+.listItem:hover {
+    background-color: gainsboro;
+    background-size: auto;
+}
+.listItem:active {
+    background-color: lightgray;
+}
+.listText {
+    display: block;
+    color: dimgray;
+}

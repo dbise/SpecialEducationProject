@@ -8,10 +8,12 @@ import Header from './Components/Header'
 import Students from './Components/Students'
 import Assignments from './Components/Assignments'
 import Reporting from './Components/Reporting'
+import Settings from './Components/Settings'
+import Account from './Components/Account'
 
 function App() {
     return (
-        <div>
+        <div className='dom'>
             <Router>
                 <Header/>
                 <div>
@@ -24,6 +26,12 @@ function App() {
                         </Route>
                         <Route path="/reporting">
                             <Reporting/>
+                        </Route>
+                        <Route path="/settings">
+                            <Settings/>
+                        </Route>
+                        <Route path="/account">
+                            <Account/>
                         </Route>
                     </Switch>
                 </div>

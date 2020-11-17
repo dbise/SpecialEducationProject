@@ -3,7 +3,7 @@ import './css/Assignments.css'
 
 function Assignments(props){
     return (
-        <div>Assignments...</div>
+        <div className="assignments">Assignments...</div>
 
     );
 }
