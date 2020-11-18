@@ -4,12 +4,12 @@
 }
 .logo {
     width: auto;
-    height: 50px;
+    height: 55px;
     padding: 5px;
     background-color: lightskyblue;
 }
 .navItem {
-    line-height: 50px;
+    line-height: 60px;
     color: dimgray;
     font-size: 15px;
     padding-left: 50px;
@@ -22,6 +22,9 @@
 .navItem:active {
     background-color: silver;
     background-size: 50px;
+}
+.navItem:focus {
+    border-bottom: 5px solid lightskyblue;
 }
 .navBar {
     display: flex;
@@ -45,7 +48,7 @@
     border-radius: 50%;
 }
 .profile:hover {
-    border: 2px solid silver;
+    border: 2px solid snow;
     border-radius: 50%;
 }
 .profile:active {

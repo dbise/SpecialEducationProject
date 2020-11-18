@@ -4,6 +4,7 @@ import './css/Header.css'
 import logo from '../resources/SE.png'
 import profile from '../resources/arwen.png'
 import AccountDropdown from './AccountDropdown'
+import Assignments from './Assignments'
 
 function Header(props){
     const [showDropdown, setShowDropdown] = useState(false)

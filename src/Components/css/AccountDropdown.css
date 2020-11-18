@@ -1,7 +1,6 @@
 .dropdown {
     position: fixed;
     list-style-type: none;
-    width: 150px;
     right: 8px;
     top: 56px;
     border: 1px solid gainsboro;
@@ -10,7 +9,6 @@
     padding-right: 10px;
 }
 .userName {
-    position: relative;
     text-align: left;
     padding: 5px;
     color: dimgray;
