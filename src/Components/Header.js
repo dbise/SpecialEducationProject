@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 import './css/Header.css'
 import logo from '../resources/SE.png'
 import profile from '../resources/arwen.png'
@@ -7,6 +7,10 @@ import AccountDropdown from './AccountDropdown'
 
 function Header(props){
     const [showDropdown, setShowDropdown] = useState(false)
+    const [activeTab, setActiveTab] = useState(false)
+    const setActive = (event, newValue) => {
+        setActiveTab(newValue)
+    }
 
     let dropdown
     let dropdownMask
@@ -21,34 +25,36 @@ function Header(props){
             <header className="header">
                 <img className="logo" src={logo} alt="Logo"/> 
                 <div className="navBar">
-                    <Link 
+                    <NavLink 
                         to="/students" 
                         id="students" 
-                        activeClass="activeNavItem"
-                        className="navItem" 
+                        className="navItem"
                         style={{ textDecoration: 'none' }}
+                        activeStyle={{borderBottom: '5px solid lightskyblue'}}
                         onClick={ () => setShowDropdown(false) }
                     >
                         Students
-                    </Link>
-                    <Link 
+                    </NavLink>
+                    <NavLink 
                         to="/assignments" 
                         id="assignments" 
-                        className="navItem" 
+                        className="navItem"
                         style={{ textDecoration: 'none' }}
+                        activeStyle={{borderBottom: '5px solid lightskyblue'}}
                         onClick={ () => setShowDropdown(false) }
                     >
                         Assignments
-                    </Link>
-                    <Link 
+                    </NavLink>
+                    <NavLink 
                         to="/reporting" 
                         id="reporting" 
                         className="navItem" 
                         style={{ textDecoration: 'none' }}
+                        activeStyle={{borderBottom: '5px solid lightskyblue'}}
                         onClick={ () => setShowDropdown(false) }
                     >
                         Reporting
-                    </Link>
+                    </NavLink>
                     <div className="border">
                         |
                     </div>

@@ -24,7 +24,7 @@
     background-color: gainsboro;
     background-size: 60px;
 }
-.activeNavItem {
+.navItem .activeNavItem {
     border-bottom: 5px solid lightskyblue;
 }
 .navBar {
