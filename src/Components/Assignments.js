@@ -5,10 +5,10 @@ function Assignments(props){
     return (
         <div className='assignments'>
             <div className='side-panel'>
-                <div className='side-panelItem'>
+                <div className='side-panel-item'>
                     Create Assignment +
                 </div>
-                <div className='side-panelItem'>
+                <div className='side-panel-item'>
                     Files
                 </div>
             </div>
