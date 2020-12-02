@@ -1,0 +1,22 @@
+{
+  "Teachers": [
+    {
+      "id": 1,
+      "firstName": "Arwen",
+      "lastName": "Undómiel",
+      "age": 32,
+      "userName": "arwen",
+      "password": "lordoftherings"
+    }
+  ],
+  "Students": [
+    {
+      "id": 1,
+      "Name": "George",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
