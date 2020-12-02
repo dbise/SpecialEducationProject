@@ -4,7 +4,6 @@ import './css/Header.css'
 import logo from '../resources/SE.png'
 import profile from '../resources/arwen.png'
 import AccountDropdown from './AccountDropdown'
-import Assignments from './Assignments'
 
 function Header(props){
     const [showDropdown, setShowDropdown] = useState(false)
@@ -14,20 +13,21 @@ function Header(props){
     if(showDropdown){
         dropdown = <AccountDropdown closeMenu={() => setShowDropdown(false)}/>
         dropdownMask =
-        <div className='dropdownMask' onClick={() => setShowDropdown(false)} />
+        <div className="dropdownMask" onClick={() => setShowDropdown(false)} />
     }
 
     return (
         <div>
-            <header className='header'>
+            <header className="header">
                 <img className="logo" src={logo} alt="Logo"/> 
                 <div className="navBar">
                     <Link 
                         to="/students" 
                         id="students" 
+                        activeClass="activeNavItem"
                         className="navItem" 
                         style={{ textDecoration: 'none' }}
-                        onClick={() => setShowDropdown(false)}
+                        onClick={ () => setShowDropdown(false) }
                     >
                         Students
                     </Link>
@@ -36,7 +36,7 @@ function Header(props){
                         id="assignments" 
                         className="navItem" 
                         style={{ textDecoration: 'none' }}
-                        onClick={() => setShowDropdown(false)}
+                        onClick={ () => setShowDropdown(false) }
                     >
                         Assignments
                     </Link>
@@ -45,7 +45,7 @@ function Header(props){
                         id="reporting" 
                         className="navItem" 
                         style={{ textDecoration: 'none' }}
-                        onClick={() => setShowDropdown(false)}
+                        onClick={ () => setShowDropdown(false) }
                     >
                         Reporting
                     </Link>
