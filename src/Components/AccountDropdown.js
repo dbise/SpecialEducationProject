@@ -6,32 +6,32 @@ function AccountDropdown(props) {
     return (
         <div>
             <ul className='dropdown'>
-                <li className='userName'>
+                <li className='username'>
                     Arwen of Rivendell
                 </li>
-                <li className='listItem'>
+                <li className='list-item'>
                     <Link 
                         to="/settings" 
                         id="settings"
-                        className='listText'
+                        className='list-text'
                         style={{ textDecoration: 'none' }}
                         onClick={props.closeMenu}
                     >
                         Settings
                     </Link>
                 </li>
-                <li className='listItem'>
+                <li className='list-item'>
                     <Link 
                         to="/account" 
                         id="account"
-                        className='listText'
+                        className='list-text'
                         style={{ textDecoration: 'none' }}
                         onClick={props.closeMenu}
                     >
                         Account
                     </Link>
                 </li>
-                <li className='listItem'>
+                <li className='list-item'>
                     Log Out
                 </li>
             </ul>

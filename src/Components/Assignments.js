@@ -4,11 +4,11 @@ import './css/Assignments.css'
 function Assignments(props){
     return (
         <div className='assignments'>
-            <div className='sidePanel'>
-                <div className='sidePanelItem'>
+            <div className='side-panel'>
+                <div className='side-panel-item'>
                     Create Assignment +
                 </div>
-                <div className='sidePanelItem'>
+                <div className='side-panel-item'>
                     Files
                 </div>
             </div>

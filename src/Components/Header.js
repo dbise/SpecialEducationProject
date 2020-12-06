@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import './css/Header.css'
 import logo from '../resources/SE.png'
 import profile from '../resources/arwen.png'
 import AccountDropdown from './AccountDropdown'
-import Assignments from './Assignments'
 
 function Header(props){
     const [showDropdown, setShowDropdown] = useState(false)
@@ -14,41 +13,44 @@ function Header(props){
     if(showDropdown){
         dropdown = <AccountDropdown closeMenu={() => setShowDropdown(false)}/>
         dropdownMask =
-        <div className='dropdownMask' onClick={() => setShowDropdown(false)} />
+        <div className="dropdown-mask" onClick={() => setShowDropdown(false)} />
     }
 
     return (
         <div>
-            <header className='header'>
+            <header className="header">
                 <img className="logo" src={logo} alt="Logo"/> 
-                <div className="navBar">
-                    <Link 
+                <div className="nav-bar">
+                    <NavLink 
                         to="/students" 
                         id="students" 
-                        className="navItem" 
+                        className="nav-item"
                         style={{ textDecoration: 'none' }}
-                        onClick={() => setShowDropdown(false)}
+                        activeStyle={{borderBottom: '5px solid lightskyblue'}}
+                        onClick={ () => setShowDropdown(false) }
                     >
                         Students
-                    </Link>
-                    <Link 
+                    </NavLink>
+                    <NavLink 
                         to="/assignments" 
                         id="assignments" 
-                        className="navItem" 
+                        className="nav-item"
                         style={{ textDecoration: 'none' }}
-                        onClick={() => setShowDropdown(false)}
+                        activeStyle={{borderBottom: '5px solid lightskyblue'}}
+                        onClick={ () => setShowDropdown(false) }
                     >
                         Assignments
-                    </Link>
-                    <Link 
+                    </NavLink>
+                    <NavLink 
                         to="/reporting" 
                         id="reporting" 
-                        className="navItem" 
+                        className="nav-item" 
                         style={{ textDecoration: 'none' }}
-                        onClick={() => setShowDropdown(false)}
+                        activeStyle={{borderBottom: '5px solid lightskyblue'}}
+                        onClick={ () => setShowDropdown(false) }
                     >
                         Reporting
-                    </Link>
+                    </NavLink>
                     <div className="border">
                         |
                     </div>

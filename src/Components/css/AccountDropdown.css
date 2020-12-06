@@ -2,31 +2,31 @@
     position: fixed;
     list-style-type: none;
     right: 8px;
-    top: 56px;
+    top: 64px;
     border: 1px solid gainsboro;
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
 }
-.userName {
+.username {
     text-align: left;
     padding: 5px;
     color: dimgray;
     border-bottom: 1px solid lightgray;
 }
-.listItem {
+.list-item {
     text-align: left;
     padding: 5px;
     color: dimgray;
 }
-.listItem:hover {
+.list-item:hover {
     background-color: gainsboro;
     background-size: auto;
 }
-.listItem:active {
+.list-item:active {
     background-color: lightgray;
 }
-.listText {
+.list-text {
     display: block;
     color: dimgray;
 }
