@@ -42,6 +42,7 @@
 }
 .profile {
     position: fixed;
+    cursor: pointer;
     width: auto;
     height: 50px;
     right: 20px;
