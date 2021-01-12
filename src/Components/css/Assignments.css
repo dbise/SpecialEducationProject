@@ -5,6 +5,7 @@
 .side-panel {
 }
 .side-panel-item {
+    cursor: pointer;
     line-height: 60px;
     text-align: center;
     color: white; 
@@ -19,4 +20,15 @@
 }
 .side-panel-item:active {
     background-color: dimgray;
+}
+.dialog-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 8px;
+    background-color: gray;
+    opacity: 50%;
+}
+.assignment-list {
+    margin: 15px;
 }
