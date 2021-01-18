@@ -14,19 +14,19 @@ function Routes() {
     return (
         <Switch>
             <Route path="/students">
-                <Students/>
+                <Students />
             </Route>
             <Route path="/assignments">
-                <Assignments/>
+                <Assignments />
             </Route>
             <Route path="/reporting">
-                <Reporting/>
+                <Reporting />
             </Route>
             <Route path="/settings">
-                <Settings/>
+                <Settings />
             </Route>
             <Route path="/account">
-                <Account/>
+                <Account />
             </Route>
         </Switch>
     );

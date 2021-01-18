@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/Assignments.css'
 
-function Account(props){
+function Account(props) {
     return (
         <div className="account">Account...</div>
 

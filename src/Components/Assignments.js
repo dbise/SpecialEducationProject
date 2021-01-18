@@ -3,13 +3,13 @@ import CreateAssignment from './CreateAssignment'
 import './css/Assignments.css'
 import Files from './Files'
 
-function Assignments(props){
+function Assignments(props) {
     const [showContent, setShowContent] = useState(false)
     const [showCreateDialog, setShowCreateDialog] = useState(false)
 
     let content = <div className='assignment-list'>Assignment List...</div>
-    if(showContent){
-        content = <Files goBack={() => setShowContent(false)}/>
+    if (showContent) {
+        content = <Files goBack={() => setShowContent(false)} />
     }
 
     function cancel() {
@@ -18,21 +18,21 @@ function Assignments(props){
     }
     let createDialog
     let createDialogMask
-    if(showCreateDialog){
-        createDialog = <CreateAssignment goBack={cancel}/>
+    if (showCreateDialog) {
+        createDialog = <CreateAssignment goBack={cancel} />
         createDialogMask = <div className='dialog-mask' />
     }
 
     return (
         <div className='assignments'>
             <div className='side-panel'>
-                <div 
-                    className='side-panel-item' 
-                    onClick={ () => setShowCreateDialog(true) }
+                <div
+                    className='side-panel-item'
+                    onClick={() => setShowCreateDialog(true)}
                 >
                     Create Assignment +
                 </div>
-                <div className='side-panel-item' onClick={ () => setShowContent(true) }>
+                <div className='side-panel-item' onClick={() => setShowContent(true)}>
                     Files
                 </div>
             </div>

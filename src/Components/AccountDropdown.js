@@ -10,8 +10,8 @@ function AccountDropdown(props) {
                     Arwen of Rivendell
                 </li>
                 <li className='list-item'>
-                    <Link 
-                        to="/settings" 
+                    <Link
+                        to="/settings"
                         id="settings"
                         className='list-text'
                         style={{ textDecoration: 'none' }}
@@ -21,8 +21,8 @@ function AccountDropdown(props) {
                     </Link>
                 </li>
                 <li className='list-item'>
-                    <Link 
-                        to="/account" 
+                    <Link
+                        to="/account"
                         id="account"
                         className='list-text'
                         style={{ textDecoration: 'none' }}
