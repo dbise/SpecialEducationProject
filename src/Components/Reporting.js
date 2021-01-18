@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Reporting(props){
+function Reporting(props) {
     return (
         <div>Reporting...</div>
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/Files.css'
 
-function Files(props){
+function Files(props) {
     return (
         <div className='files'>
             <div className='go-back' onClick={props.goBack}>

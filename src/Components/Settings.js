@@ -6,9 +6,9 @@ import Api, { db } from '../API';
 const userInfo = JSON.parse(localStorage.getItem("user"));
 //console.log(localStorage.getItem("user"));
 class SettingsForm extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = { value: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -32,17 +32,17 @@ class SettingsForm extends React.Component {
     event.preventDefault();
   }
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
 }
 
-function Settings(props){
+function Settings(props) {
   const element = <SettingsForm firstName={userInfo.firstName} lastName={userInfo.lastName} />;
-    return (
-      <div>
-        {element}
-      </div>
-    );
+  return (
+    <div>
+      {element}
+    </div>
+  );
 }
 
 export default Settings;

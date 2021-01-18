@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/CreateAssignment.css'
 
-function CreateAssignment(props){
+function CreateAssignment(props) {
     return (
         <div className='dialog'>
             <div className='title'>
