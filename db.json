@@ -9,8 +9,7 @@
       "password": "lordoftherings"
     }
   ],
-  "Students": 
-  [
+  "Students": [
     {
       "id": 4281,
       "firstName": "Sophia",
@@ -86,7 +85,7 @@
       "email": "janispaul@gmail.com",
       "phone": "+1 (865) 505-2301",
       "address": "693 Gardner Avenue, Muse, Virginia, 1770",
-      "about": "Ipsum fugiat cillum mollit veniam laborum id cupidatat consequat reprehenderit voluptate. Aliqua eiusmod enim nisi sit irure non aute mollit nostrud qui dolore. Anim duis consectetur sit duis voluptate ipsum cillum duis sint officia minim. Qui id dolore non laboris nostrud occaecat mollit. Qui deserunt est minim magna do veniam adipisicing laboris excepteur nulla elit. Nulla reprehenderit in sit commodo et.\r\n",
+      "about": "Ipsum fugiat cillum mollit veniam laborum id cupidatat consequat reprehenderit voluptate. Aliqua eiusmod enim nisi sit irure non aute mollit nostrud qui dolore. Anim duis consectetur sit duis voluptate ipsum cillum duis sint officia minim. Qui id dolore non laboris nostrud occaecat mollit. Qui deserunt est minim magna do veniam adipisicing laboris excepteur nulla elit.\r\n",
       "guardian1": "Lolita Haney",
       "guardian2": "Maricela Holman",
       "teacherId": 2
