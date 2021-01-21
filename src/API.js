@@ -23,7 +23,7 @@ class API {
 
     endpoints.getAll = () => axios.get(resourceURL)
 
-    endpoints.getOne = ({ id }, config = {}) => axios.get(`${resourceURL}/${id}`, config)
+    endpoints.getOne = (id) => axios.get(resourceURL+"/"+id)
 
     endpoints.create = (toCreate, config = {}) => axios.post(resourceURL, toCreate, config)
 
