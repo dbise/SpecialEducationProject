@@ -7,14 +7,6 @@
       "age": 32,
       "userName": "arwen",
       "password": "lordoftherings"
-    },
-    {
-      "id": 2,
-      "firstName": "Darth",
-      "lastName": "Vader",
-      "age": 55,
-      "userName": "darth",
-      "password": "deathstar"
     }
   ],
   "Students": [
