@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './css/Settings.css'
+import Table from 'react-bootstrap/Table'
 //begin: json-server
 import { db } from '../API';
 //end: json-server
@@ -34,7 +35,7 @@ class StudentInfo extends React.Component {
         const bodyJsx = this.studentList.map((student, index) => {
             const { id, firstName, lastName, age, grade } = student
             return (
-                <tr key={id}>
+                <tr key={id} class="studentRow" onClick={() => { alert(`Someday this will show some details for ${firstName} ${lastName}`) }}>
                     <td>{firstName}</td>
                     <td>{lastName}</td>
                     <td>{age}</td>
@@ -44,12 +45,12 @@ class StudentInfo extends React.Component {
         })
 
         ReactDOM.render((
-            <table>
+            <Table striped bordered hover responsive id="table">
                 <tbody id="tableBody">
                     {headerJsx}
                     {bodyJsx}
                 </tbody>
-            </table>
+            </Table>
 
 
         ), document.querySelector('#table'));
@@ -57,8 +58,8 @@ class StudentInfo extends React.Component {
 
     render() {
         return (
-            <table id="table">
-            </table>
+            <Table striped bordered hover responsive id="table">
+            </Table>
         );
     }
 }
