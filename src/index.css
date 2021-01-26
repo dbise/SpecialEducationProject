@@ -1,3 +1,6 @@
 .dom {
     font-family: Arial, Helvetica, sans-serif;
 }
+*, *::after, *::before {
+    box-sizing: content-box;
+}

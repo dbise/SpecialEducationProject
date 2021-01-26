@@ -51,7 +51,7 @@ function Header(props) {
                     >
                         Reporting
                     </NavLink>
-                    <div className="border">
+                    <div className="divider">
                         |
                     </div>
                     <img

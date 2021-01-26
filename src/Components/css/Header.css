@@ -17,6 +17,7 @@
     border-radius: 10px;
 }
 .nav-item:hover {
+    color: dimgray;
     background-color: whitesmoke;
     background-size: 60px;
 }
@@ -32,7 +33,7 @@
     align-items: center;
     padding-left: 45px;
 }
-.border {
+.divider {
     position: fixed;
     right: 85px;
     top: 16px;
