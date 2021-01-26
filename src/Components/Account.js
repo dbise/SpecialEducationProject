@@ -1,70 +1,55 @@
 import React from 'react'
 // import './css/Account.css'
 import { db } from '../API';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
 
 const localUserInfo = JSON.parse(localStorage.getItem('user'));
 
-function saveActive(){
-  console.log("hello");
-}
+class Account extends React.Component {
+    constructor() {
+        super()
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+  
+    // function must be async to fulfill promise
+    async handleSubmit() {
+        const user = await db.endpoints.Teachers.getAll() //gets the Teachers json, must use 'await' for all api calls
+        await db.endpoints.Teachers.patch(user.data[0], {
+                "firstName": this.firstName.value,
+                "lastName": this.lastName.value
+            })
+        alert('Account name has been updated: '+this.firstName.value+' '+this.lastName.value)
 
-function Account (props) {
-  function handleChange(e) {
-    console.log(e.target.value);
-  }
-  const userInfo = JSON.parse(localStorage.getItem("user"));
-  const userId = userInfo.id;
-  const user = db.endpoints.Teachers.getOne(userId);
-  console.log(user);
-  return (
-    <div>
-      <Container>
-        <Row>
-          <Col>
-          <InputGroup className="mb-3">
-            <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon3">
-                First Name:
-              </InputGroup.Text>
-            </InputGroup.Prepend>
-            <FormControl
-            id="basic-url"
-            aria-describedby="basic-addon3"
-            defaultValue={userInfo.firstName}
-            onChange= {handleChange}
-            />
-          </InputGroup>
-          </Col>
-          <Col>
-          <InputGroup className="mb-3">
-            <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon3">
-                Last Name:
-              </InputGroup.Text>
-            </InputGroup.Prepend>
-            <FormControl
-            id="basic-url"
-            aria-describedby="basic-addon3"
-            defaultValue={userInfo.lastName}
-            onChange= {handleChange}
-            />
-          </InputGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col>1 of 3</Col>
-          <Col>2 of 3</Col>
-          <Col>3 of 3</Col>
-        </Row>
-      </Container>
-    </div>
+        // updating local storage separately because it takes a minute for db to update
+        // also, we could pull info directly from db, but local storage is maybe the better option?
+        localUserInfo.firstName = this.firstName.value
+        localUserInfo.lastName = this.lastName.value
+        localStorage.setItem('user', JSON.stringify(localUserInfo))
+        window.location.reload(false) // refresh page so that other areas of app will update
+    }
+  
+    render() {
+        return (
+            <div>
+                <label>
+                    First Name: 
+                    <input 
+                        type="text" 
+                        defaultValue={localUserInfo.firstName} 
+                        ref={myinput => (this.firstName = myinput)}
+                    />
+                </label>
+                <label>
+                    Last Name: 
+                    <input 
+                        type="text" 
+                        defaultValue={localUserInfo.lastName} 
+                        ref={myinput => (this.lastName = myinput)}
+                    />
+                </label>
+                <button onClick={this.handleSubmit}>Submit</button>
+            </div>
       );
     }
-
+  }
+  
 export default Account;
