@@ -24,16 +24,14 @@ class StudentInfo extends React.Component {
     }
 
     showSingleStudent(student) {
-        if (this.individualStudent === false) {
-            ReactDOM.render((
-                <div>
-                    <div className='dialog-mask'></div>
-                    <ViewStudent student={student} />
-                </div>
+        ReactDOM.render((
+            <div>
+                <div className='dialog-mask'></div>
+                <ViewStudent student={student} />
+            </div>
 
-            ), document.querySelector('#table'));
-            this.individualStudent = true
-        }
+        ), document.querySelector('#table'));
+        this.individualStudent = true
     }
 
     async renderTable() {
