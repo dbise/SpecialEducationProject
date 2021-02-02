@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './css/Settings.css'
 import Table from 'react-bootstrap/Table'
+import './css/Students.css'
+import ViewStudent from './ViewStudent'
+
 //begin: json-server
 import { db } from '../API';
 //end: json-server
@@ -9,7 +11,6 @@ import { db } from '../API';
 class StudentInfo extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: '' };
         this.studentList = []
     }
 
@@ -20,6 +21,19 @@ class StudentInfo extends React.Component {
                 this.studentsHtml = this.renderTable();
             }
         )
+    }
+
+    showSingleStudent(student) {
+        if (this.individualStudent === false) {
+            ReactDOM.render((
+                <div>
+                    <div className='dialog-mask'></div>
+                    <ViewStudent student={student} />
+                </div>
+
+            ), document.querySelector('#table'));
+            this.individualStudent = true
+        }
     }
 
     async renderTable() {
@@ -35,7 +49,9 @@ class StudentInfo extends React.Component {
         const bodyJsx = this.studentList.map((student, index) => {
             const { id, firstName, lastName, age, grade } = student
             return (
-                <tr key={id} class="studentRow" onClick={() => { alert(`Someday this will show some details for ${firstName} ${lastName}`) }}>
+                <tr key={id} className="studentRow" onClick={() => {
+                    this.showSingleStudent(student)
+                }}>
                     <td>{firstName}</td>
                     <td>{lastName}</td>
                     <td>{age}</td>
@@ -51,8 +67,6 @@ class StudentInfo extends React.Component {
                     {bodyJsx}
                 </tbody>
             </Table>
-
-
         ), document.querySelector('#table'));
     }
 
