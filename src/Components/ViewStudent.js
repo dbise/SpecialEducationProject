@@ -179,14 +179,16 @@ function ViewStudent(props) {
                     </Col>
                 </Row>
                 <Row>
-                    <FormGroup>
-                        <InputGroup.Text id="basic-addon3">
-                            About:
+                    <Col>
+                        <FormGroup>
+                            <InputGroup.Text id="basic-addon3">
+                                About:
                         </InputGroup.Text>
-                        <FormControl as="textarea" rows={5} aria-describedby="basic-addon3"
-                            defaultValue={props.student.about}
-                            onChange={handleChange} className="overflow-auto" />
-                    </FormGroup>
+                            <FormControl as="textarea" rows={5} aria-describedby="basic-addon3"
+                                defaultValue={props.student.about}
+                                onChange={handleChange} className="overflow-auto" />
+                        </FormGroup>
+                    </Col>
                 </Row>
             </div>
         )
