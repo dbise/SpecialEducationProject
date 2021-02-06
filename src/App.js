@@ -5,7 +5,7 @@ import {
 import Header from './Components/Header'
 import Routes from './Routes'
 //begin: json-server
-import Api, { db } from './API';
+import { db } from './API';
 //end: json-server
 
 const App = () => {
@@ -18,10 +18,10 @@ const App = () => {
     console.log(db.endpoints);
     const user = { username, password };
     const userNameSearch = await db.endpoints.Teachers.getAll();
-    var found = userNameSearch.data.filter(function (value) { return value.userName == user.username })
+    var found = userNameSearch.data.filter(function (value) { return value.userName === user.username })
     console.log(found);
-    if (found.length != 0) {
-      if (found[0].password == user.password) {
+    if (found.length !== 0) {
+      if (found[0].password === user.password) {
         console.log("logged in as: ", found[0].firstName);
         // set the state of the user
         setUser(found[0])
