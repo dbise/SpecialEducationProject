@@ -163,6 +163,33 @@
       "teacherId": 3
     }
   ],
+  "Assignments": [
+    {
+      "id": 1,
+      "name": "Assignment1",
+      "description": "Description..."
+    },
+    {
+      "id": 2,
+      "name": "Assignment2",
+      "description": "This is the second assignment..."
+    },
+    {
+      "id": 3,
+      "name": "Assignment3",
+      "description": "This is the third assignment..."
+    },
+    {
+      "id": 4,
+      "name": "Assignment4",
+      "description": "This is the fourth assignment..."
+    },
+    {
+      "id": 5,
+      "name": "Assignment5",
+      "description": "This is the fifth assignment..."
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

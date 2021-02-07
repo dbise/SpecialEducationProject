@@ -50,16 +50,11 @@ class API {
 }
 
 
-const db = new API({
-  url: 'http://localhost:3004'
-})
-// const apiURL = 'http://localhost:3004';
-db.createEntity({
-  name: 'Teachers'
-})
-db.createEntity({
-  name: 'Students'
-})
+const db = new API({ url: 'http://localhost:3004' })
+const apiURL = 'http://localhost:3004';
+db.createEntity({ name: 'Teachers' })
+db.createEntity({ name: 'Students' })
+db.createEntity({ name: 'Assignments' })
 
 //export db object
 export {

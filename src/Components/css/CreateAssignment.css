@@ -1,4 +1,4 @@
-.dialog {
+.create-assignment-dialog {
     position: absolute;
     width: 95%;
     height: 95%;
@@ -7,22 +7,62 @@
     border-radius: 15px;
     background-color: white;
 }
-.title {
-    position: inherit;
+.new-assignment-title {
+    position: relative;
     font-size: 25px;
     color: dimgray;
-    top: 5px;
-    left: 5px;
+    top: 20px;
+    left: 20px;
     padding: 15px;
 }
-.title:hover {
-    border: 2px solid lightgray;
+.new-assignment-title:hover {
+    border: 2px solid darkgray;
+}
+.new-assignment-title:focus {
+    outline-color: lightskyblue;
+}
+.new-assignment-description {
+    position: relative;
+    resize: both;
+    height: 50px;
+    width: 500px;
+    overflow: auto;
+    color: dimgray;
+    top: 35px;
+    left: 20px;
+    padding: 15px;
+}
+.new-assignment-description:hover {
+    border: 2px solid darkgray;
+}
+.new-assignment-description:focus {
+    outline-color: lightskyblue;
 }
 .add-problems {
-    position: inherit;
+    position: relative;
     color: slategray;
     margin-left: 50px;
     margin-top: 75px;
+}
+.save {
+    position: inherit;
+    cursor: pointer;
+    bottom: 25px;
+    left: 25px;
+    line-height: 50px;
+    text-align: center;
+    color: white; 
+    width: 100px;
+    border: 2px solid darkgray;
+    border-radius: 50px;
+    background-color: lightslategray;
+    margin: 10px;
+}
+.save:hover {
+    background-color: slategray;
+}
+.save:active {
+    background-color: dimgray;
 }
 .cancel {
     position: inherit;
@@ -45,7 +85,7 @@
     background-color: dimgray;
 }
 @media screen and (max-width: 1000px){
-    .dialog {
+    .create-assignment-dialog {
         width: 90%;
         height: 90%;
     }

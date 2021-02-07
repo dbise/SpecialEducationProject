@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AssignmentList from './AssignmentList'
 import CreateAssignment from './CreateAssignment'
 import './css/Assignments.css'
 import Files from './Files'
@@ -7,7 +8,7 @@ function Assignments(props) {
     const [showContent, setShowContent] = useState(false)
     const [showCreateDialog, setShowCreateDialog] = useState(false)
 
-    let content = <div className='assignment-list'>Assignment List...</div>
+    let content = <AssignmentList />
     if (showContent) {
         content = <Files goBack={() => setShowContent(false)} />
     }
@@ -36,9 +37,7 @@ function Assignments(props) {
                     Files
                 </div>
             </div>
-            <div>
-                {content}
-            </div>
+            {content}
             {createDialogMask}
             {createDialog}
         </div>

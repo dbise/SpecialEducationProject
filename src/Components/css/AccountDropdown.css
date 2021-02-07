@@ -16,22 +16,22 @@
     color: dimgray;
     border-bottom: 1px solid lightgray;
 }
-.list-item {
+.profile-list-item {
     text-align: left;
     padding: 5px;
     color: dimgray;
 }
-.list-item:hover {
+.profile-list-item:hover {
     background-color: gainsboro;
     background-size: auto;
 }
-.list-item:active {
+.profile-list-item:active {
     background-color: lightgray;
 }
-.list-text {
+.profile-list-text {
     display: block;
     color: dimgray;
 }
-.list-text:hover {
+.profile-list-text:hover {
     color: dimgray;
 }
