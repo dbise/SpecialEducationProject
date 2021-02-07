@@ -69,7 +69,7 @@
     {
       "id": 1724,
       "firstName": "Snow",
-      "lastName": "Beard",
+      "lastName": "Bird",
       "age": 18,
       "birthday": "Mon Sep 12 1983",
       "grade": 3,
@@ -84,7 +84,7 @@
     },
     {
       "id": 795,
-      "firstName": "Janis",
+      "firstName": "Denise",
       "lastName": "Paul",
       "age": 14,
       "birthday": "Wed Oct 24 2001",

@@ -39,6 +39,40 @@
     margin: 10px;
 }
 
+.submit {
+    position: inherit;
+    bottom: 25px;
+    left: 25px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    width: 100px;
+    border: 2px solid darkgray;
+    border-radius: 50px;
+    background-color: rgb(201, 206, 211);
+    margin: 10px;
+    cursor: not-allowed;
+}
+
+.submit_changed {
+    position: inherit;
+    cursor: pointer;
+    bottom: 25px;
+    left: 25px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    width: 100px;
+    border: 2px solid darkgray;
+    border-radius: 50px;
+    background-color: lightslategray;
+    margin: 10px;
+}
+
+.submit_changed:hover {
+    background-color: rgb(85, 179, 98);
+}
+
 .cancel:hover {
     background-color: slategray;
 }

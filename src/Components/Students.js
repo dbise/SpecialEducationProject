@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom'
 import Table from 'react-bootstrap/Table'
 import './css/Students.css'
 import ViewStudent from './ViewStudent'
-
-//begin: json-server
 import { db } from '../API';
-//end: json-server
 
 class StudentInfo extends React.Component {
     constructor(props) {
@@ -70,8 +67,8 @@ class StudentInfo extends React.Component {
 
     render() {
         return (
-            <Table striped bordered hover responsive id="table">
-            </Table>
+            <div id="table">
+            </div>
         );
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+// import React, { useState } from 'react'
 import './css/ViewStudent.css'
 import ReactDOM from 'react-dom'
 import Students from './Students'
@@ -8,17 +9,70 @@ import FormControl from 'react-bootstrap/FormControl';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
+import { db } from '../API';
 
 
 function ViewStudent(props) {
+    let valueChanged = false;
+    // const [address, about, age, birthday, first, gender, grade, guardian1, guardian2, last, phone, teacherId] = useState(0);
+    // useState({
+    //     address: props.student.address,
+    //     about: props.student.about,
+    //     age: props.student.age,
+    //     birthday: props.student.birthday,
+    //     first: props.student.firstName,
+    //     gender: props.student.gender,
+    //     grade: props.student.grade,
+    //     guardian1: props.student.guardian1,
+    //     guardian2: props.student.guardian2,
+    //     last: props.student.lastName,
+    //     phone: props.student.phone,
+    //     teacherId: props.student.teacherId
+    // })
+
     function handleChange(e) {
-        console.log(e.target.value);
+        // console.log(e.target.value);
+        valueChanged = true;
+        try {
+            document.querySelector(".submit").className = "submit_changed"
+        }
+        catch { }
+
+        props.student[e.target.id] = e.target.value
+
+        // console.log(props.student)
     }
+
+    function handleSubmit() {
+        if (valueChanged) {
+            db.endpoints.Students.patch({ "id": props.student.id }, {
+                "address": props.student.address,
+                "about": props.student.about,
+                "age": props.student.age,
+                "birthday": props.student.birthday,
+                "firstName": props.student.firstName,
+                "gender": props.student.gender,
+                "grade": props.student.grade,
+                "guardian1": props.student.guardian1,
+                "guardian2": props.student.guardian2,
+                "lastName": props.student.lastName,
+                "phone": props.student.phone,
+                "teacherId": props.student.teacherId
+            })
+        }
+
+
+
+        window.location.reload(false) // refresh page so that other areas of app will update
+
+    }
+
+
 
     function renderStudentInfo() {
         return (
             // This looks absolutely horrid on mobile
-            <div>
+            <form id="form">
                 <Row>
                     <Col>
                         <InputGroup className="mb-3">
@@ -28,7 +82,7 @@ function ViewStudent(props) {
                         </InputGroup.Text>
                             </InputGroup.Prepend>
                             <FormControl
-                                id="first"
+                                id="firstName"
                                 aria-describedby="basic-addon3"
                                 defaultValue={props.student.firstName}
                                 onChange={handleChange}
@@ -42,7 +96,7 @@ function ViewStudent(props) {
                         </InputGroup.Text>
                             </InputGroup.Prepend>
                             <FormControl
-                                id="last"
+                                id="lastName"
                                 aria-describedby="basic-addon3"
                                 defaultValue={props.student.lastName}
                                 onChange={handleChange}
@@ -190,7 +244,7 @@ function ViewStudent(props) {
                         </FormGroup>
                     </Col>
                 </Row>
-            </div>
+            </form>
         )
 
     }
@@ -202,6 +256,12 @@ function ViewStudent(props) {
 
                 <div>{renderStudentInfo()}</div>
             </Container>
+            <div className='submit' onClick={() => {
+                handleSubmit()
+            }}>
+                Save
+            </div>
+
             <div className='cancel' onClick={() => {
                 ReactDOM.render((
                     <div>

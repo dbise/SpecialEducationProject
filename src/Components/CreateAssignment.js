@@ -10,16 +10,17 @@ class CreateAssignment extends React.Component {
 
     async handleSubmit() {
         let user = await db.endpoints.Assignments.getAll();
-        await db.endpoints.Assignments.create(user.Assignments, { })
+        await db.endpoints.Assignments.create(user.Assignments, {})
         user = await db.endpoints.Assignments.getAll();
         console.log(user.data)
         let size = user.data.length
         console.log(size)
         console.log(user.data[size - 1])
+        alert()
         await db.endpoints.Assignments.patch(user.data[size - 1], {
-                "name": this.assignmentName.value,
-                "description": this.description.value
-            }
+            "name": this.assignmentName.value,
+            "description": this.description.value
+        }
         )
 
         window.location.reload(false) // refresh page so that other areas of app will update
@@ -31,7 +32,7 @@ class CreateAssignment extends React.Component {
                 <div>
                     <input
                         className='new-assignment-title'
-                        type="text" 
+                        type="text"
                         defaultValue="Untitled Assignment"
                         ref={myinput => (this.assignmentName = myinput)}
                     />

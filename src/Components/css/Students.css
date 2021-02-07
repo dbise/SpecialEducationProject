@@ -28,3 +28,7 @@
     background-color: gray;
     opacity: 50%;
 }
+
+td {
+    cursor: pointer;
+}
