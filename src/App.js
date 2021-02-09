@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Components/css/Login.css'
 import {
   BrowserRouter as Router,
 } from "react-router-dom"
@@ -7,6 +8,7 @@ import Routes from './Routes'
 //begin: json-server
 import { db } from './API';
 //end: json-server
+import logo from './resources/SE.png'
 
 const App = () => {
   const [username, setUsername] = useState("");
@@ -44,25 +46,28 @@ const App = () => {
 
   // if there's no user, show the login form
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username: </label>
-      <input
-        type="text"
-        value={username}
-        placeholder="enter a username"
-        onChange={({ target }) => setUsername(target.value)}
-      />
-      <div>
-        <label htmlFor="password">password: </label>
-        <input
-          type="password"
-          value={password}
-          placeholder="enter a password"
-          onChange={({ target }) => setPassword(target.value)}
-        />
+    <div class="form-login-container">
+    <img className="login-logo" src={logo} alt="Logo" />
+      <div class="login-form">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={username}
+            placeholder="Username"
+            onChange={({ target }) => setUsername(target.value)}
+          />
+          <div>
+            <input
+              type="password"
+              value={password}
+              placeholder="Password"
+              onChange={({ target }) => setPassword(target.value)}
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
       </div>
-      <button type="submit">Login</button>
-    </form>
+    </div>
   );
 };
 
