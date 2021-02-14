@@ -31,29 +31,35 @@ function ViewStudent(props) {
             // THIS NEEDS SOME REAL VALIDATION AND SANITATION
 
             db.endpoints.Students.patch({ "id": props.student.id }, {
-                "address": props.student.address,
+                "address1": props.student.address1,
+                "address2": props.student.address2,
+                "city": props.student.city,
+                "state": props.student.state,
+                "zip": props.student.zip,
                 "about": props.student.about,
                 "age": props.student.age,
                 "birthday": props.student.birthday,
                 "firstName": props.student.firstName,
+                "lastName": props.student.lastName,
                 "gender": props.student.gender,
                 "grade": props.student.grade,
                 "guardian1": props.student.guardian1,
                 "guardian2": props.student.guardian2,
-                "lastName": props.student.lastName,
                 "phone": props.student.phone,
+                "email": props.student.email,
                 "teacherId": props.student.teacherId
             })
+            window.location.reload(false) // refresh page so that other areas of app will update
+
         }
 
-        window.location.reload(false) // refresh page so that other areas of app will update
     }
 
     function renderStudentInfo() {
         return (
             // This looks absolutely horrid on mobile
             <form id="form">
-                <Row>
+                <Row className="justify-content-md-center">
                     <Col>
                         <InputGroup className="mb-3">
                             <InputGroup.Prepend>
@@ -138,22 +144,6 @@ function ViewStudent(props) {
                                 onChange={handleChange}
                             />
                         </InputGroup>
-                    </Col>
-
-                    <Col>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Prepend>
-                                <InputGroup.Text id="basic-addon3">
-                                    Address:
-                        </InputGroup.Text>
-                            </InputGroup.Prepend>
-                            <FormControl
-                                id="address"
-                                aria-describedby="basic-addon3"
-                                defaultValue={props.student.address}
-                                onChange={handleChange}
-                            />
-                        </InputGroup>
 
                         <InputGroup className="mb-3">
                             <InputGroup.Prepend>
@@ -182,6 +172,79 @@ function ViewStudent(props) {
                                 onChange={handleChange}
                             />
                         </InputGroup>
+                    </Col>
+
+                    <Col>
+                        <InputGroup className="mb-3">
+                            <InputGroup.Prepend>
+                                <InputGroup.Text id="basic-addon3">
+                                    Address 1:
+                        </InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                id="address1"
+                                aria-describedby="basic-addon3"
+                                defaultValue={props.student.address1}
+                                onChange={handleChange}
+                            />
+                        </InputGroup>
+
+                        <InputGroup className="mb-3">
+                            <InputGroup.Prepend>
+                                <InputGroup.Text id="basic-addon3">
+                                    Address 2:
+                        </InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                id="address2"
+                                aria-describedby="basic-addon3"
+                                defaultValue={props.student.address2}
+                                onChange={handleChange}
+                            />
+                        </InputGroup>
+
+                        <InputGroup className="mb-3">
+                            <InputGroup.Prepend>
+                                <InputGroup.Text id="basic-addon3">
+                                    City:
+                        </InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                id="city"
+                                aria-describedby="basic-addon3"
+                                defaultValue={props.student.city}
+                                onChange={handleChange}
+                            />
+                        </InputGroup>
+
+                        <InputGroup className="mb-3">
+                            <InputGroup.Prepend>
+                                <InputGroup.Text id="basic-addon3">
+                                    State:
+                        </InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                id="state"
+                                aria-describedby="basic-addon3"
+                                defaultValue={props.student.state}
+                                onChange={handleChange}
+                            />
+                        </InputGroup>
+
+
+                        <InputGroup className="mb-3">
+                            <InputGroup.Prepend>
+                                <InputGroup.Text id="basic-addon3">
+                                    Zip:
+                        </InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                id="zip"
+                                aria-describedby="basic-addon3"
+                                defaultValue={props.student.zip}
+                                onChange={handleChange}
+                            />
+                        </InputGroup>
 
                         <InputGroup className="mb-3">
                             <InputGroup.Prepend>
@@ -193,6 +256,20 @@ function ViewStudent(props) {
                                 id="phone"
                                 aria-describedby="basic-addon3"
                                 defaultValue={props.student.phone}
+                                onChange={handleChange}
+                            />
+                        </InputGroup>
+
+                        <InputGroup className="mb-3">
+                            <InputGroup.Prepend>
+                                <InputGroup.Text id="basic-addon3">
+                                    Email:
+                        </InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                id="email"
+                                aria-describedby="basic-addon3"
+                                defaultValue={props.student.email}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -212,13 +289,14 @@ function ViewStudent(props) {
                         </InputGroup>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="justify-content-md-center">
                     <Col>
                         <FormGroup>
                             <InputGroup.Text id="basic-addon3">
                                 About:
                         </InputGroup.Text>
                             <FormControl as="textarea" rows={5} aria-describedby="basic-addon3"
+                                id="about"
                                 defaultValue={props.student.about}
                                 onChange={handleChange} className="overflow-auto" />
                         </FormGroup>
@@ -231,10 +309,14 @@ function ViewStudent(props) {
 
     return (
         < div className='dialog' >
-            <Container >
+            <Container fluid>
                 <div className='title'>{props.student.firstName} {props.student.lastName}</div>
 
-                <div>{renderStudentInfo()}</div>
+                <Row className="justify-content-md-center">
+                    <Col xs={1}></Col>
+                    <Col xs={8}><div id="studentInfo">{renderStudentInfo()}</div></Col>
+                    <Col xs={1}></Col>
+                </Row>
             </Container>
             <div className='submit' onClick={() => {
                 handleSubmit()

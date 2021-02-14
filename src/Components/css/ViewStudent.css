@@ -14,7 +14,7 @@
     color: dimgray;
     top: 5px;
     left: 5px;
-    padding: 15px;
+    padding: 15px 15px 15px 0;
 }
 
 .student-info {
@@ -88,6 +88,6 @@
     }
 }
 
-.input-group-text {
-    width: 100px;
+div#studentInfo .input-group-prepend {
+    width: 125px;
 }
