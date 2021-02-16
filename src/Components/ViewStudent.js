@@ -289,7 +289,7 @@ function ViewStudent(props) {
                         </InputGroup>
                     </Col>
                 </Row>
-                <Row className="justify-content-md-center">
+                <Row>
                     <Col>
                         <FormGroup>
                             <InputGroup.Text id="basic-addon3">
@@ -312,11 +312,7 @@ function ViewStudent(props) {
             <Container fluid>
                 <div className='title'>{props.student.firstName} {props.student.lastName}</div>
 
-                <Row className="justify-content-md-center">
-                    <Col xs={1}></Col>
-                    <Col xs={8}><div id="studentInfo">{renderStudentInfo()}</div></Col>
-                    <Col xs={1}></Col>
-                </Row>
+                <div id="studentInfo">{renderStudentInfo()}</div>
             </Container>
             <div className='submit' onClick={() => {
                 handleSubmit()
