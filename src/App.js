@@ -25,10 +25,10 @@ const App = () => {
     if (found.length !== 0) {
       if (found[0].password === user.password) {
         console.log("logged in as: ", found[0].firstName);
-        // set the state of the user
-        setUser(found[0])
         // store the user in localStorage
         localStorage.setItem('user', JSON.stringify(found[0]))
+        // set the state of the user
+        setUser(found[0])
       }
     }
   };
@@ -47,7 +47,7 @@ const App = () => {
   // if there's no user, show the login form
   return (
     <div class="form-login-container">
-    <img className="login-logo" src={logo} alt="Logo" />
+      <img className="login-logo" src={logo} alt="Logo" />
       <div class="login-form">
         <form onSubmit={handleSubmit}>
           <input
