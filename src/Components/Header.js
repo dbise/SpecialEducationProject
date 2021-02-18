@@ -23,7 +23,7 @@ function Header(props) {
                 <div className="nav-bar">
                     <NavLink
                         to="/students"
-                        id="students"
+                        id="students-nav"
                         className="nav-item"
                         style={{ textDecoration: 'none' }}
                         activeStyle={{ borderBottom: '5px solid lightskyblue' }}
@@ -33,7 +33,7 @@ function Header(props) {
                     </NavLink>
                     <NavLink
                         to="/assignments"
-                        id="assignments"
+                        id="assignments-nav"
                         className="nav-item"
                         style={{ textDecoration: 'none' }}
                         activeStyle={{ borderBottom: '5px solid lightskyblue' }}
@@ -43,7 +43,7 @@ function Header(props) {
                     </NavLink>
                     <NavLink
                         to="/reporting"
-                        id="reporting"
+                        id="reporting-nav"
                         className="nav-item"
                         style={{ textDecoration: 'none' }}
                         activeStyle={{ borderBottom: '5px solid lightskyblue' }}

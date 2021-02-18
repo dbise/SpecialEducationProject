@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { db } from '../API'
+import deleteIcon from '../resources/delete.png'
 import './css/AssignmentList.css'
+import EditAssignment from './EditAssignment'
 
 class AssignmentList extends React.Component {
     constructor(props) {
@@ -18,14 +20,37 @@ class AssignmentList extends React.Component {
         )
     }
 
+    showEditAssignment(assignment) {
+        ReactDOM.render((
+            <div>
+                <div className='dialog-mask'></div>
+                <EditAssignment assignmentData = {assignment}/>
+            </div>
+
+        ), document.querySelector('#assignments-dialog'));
+    }
+
+    async handleDelete(assignment) {
+        // need to prompt user for confirmation before deleting
+        await db.endpoints.Assignments.delete(assignment)
+        window.location.reload(false)
+    }
+
     async renderList() {
 
         const body = this.assignmentList.map((assignment, index) => {
             const {id, name, description} = assignment
             return (
-                <div key={id} className="assignment-list-item" onClick={ () => {alert("Individual functionality coming soon")} }>
-                    <div className="assignment-name"> { name } </div>
-                    <div className="assignment-description"> { description } </div>
+                <div>
+                    <img
+                            className="delete-assignment"
+                            src={deleteIcon} alt="Delete Icon"
+                            onClick={() => {this.handleDelete(assignment)}}
+                    />
+                    <div key={id} className="assignment-list-item" onClick={ () => {this.showEditAssignment(assignment)} }>
+                        <div className="assignment-name"> { name } </div>
+                        <div className="assignment-description"> { description } </div>
+                    </div>
                 </div>
                 
             )

@@ -2,23 +2,19 @@ import React from 'react'
 import './css/CreateAssignment.css'
 import { db } from '../API'
 
-class CreateAssignment extends React.Component {
+class EditAssignment extends React.Component {
     constructor() {
         super()
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     async handleSubmit() {
-        let user = await db.endpoints.Assignments.getAll();
-        await db.endpoints.Assignments.create(user.Assignments, {})
-        user = await db.endpoints.Assignments.getAll();
-        let size = user.data.length
-        await db.endpoints.Assignments.patch(user.data[size - 1], {
+        await db.endpoints.Assignments.patch(this.props.assignmentData, {
             "name": this.assignmentName.value,
             "description": this.description.value
         })
 
-        window.location.reload(false) // refresh page so that other areas of app will update
+        window.location.reload(false)
     }
 
     render() {
@@ -28,7 +24,7 @@ class CreateAssignment extends React.Component {
                     <input
                         className='new-assignment-title'
                         type="text"
-                        defaultValue="Untitled Assignment"
+                        defaultValue={ this.props.assignmentData.name }
                         ref={myinput => (this.assignmentName = myinput)}
                     />
                 </div>
@@ -37,7 +33,7 @@ class CreateAssignment extends React.Component {
                         className='new-assignment-description'
                         type="text"
                         cols="75"
-                        defaultValue="Description..."
+                        defaultValue={ this.props.assignmentData.description }
                         ref={myinput => (this.description = myinput)}
                     />
                 </div>
@@ -47,7 +43,7 @@ class CreateAssignment extends React.Component {
                 <div className='save' onClick={this.handleSubmit}>
                     Save
                 </div>
-                <div className='cancel' onClick={this.props.goBack}>
+                <div className='cancel' onClick={ () => {window.location.reload(false)} }>
                     Cancel
                 </div>
             </div>
@@ -55,4 +51,4 @@ class CreateAssignment extends React.Component {
     }
 }
 
-export default CreateAssignment;
+export default EditAssignment;

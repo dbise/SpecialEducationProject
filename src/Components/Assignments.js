@@ -25,7 +25,7 @@ function Assignments(props) {
     }
 
     return (
-        <div className='assignments'>
+        <div id='assignments' className='assignments'>
             <div className='side-panel'>
                 <div
                     className='side-panel-item'
@@ -37,9 +37,11 @@ function Assignments(props) {
                     Files
                 </div>
             </div>
-            {content}
-            {createDialogMask}
-            {createDialog}
+            <div id="assignments-dialog">
+                {content}
+                {createDialogMask}
+                {createDialog}
+            </div>
         </div>
 
     );
