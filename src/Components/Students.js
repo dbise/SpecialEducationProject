@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Table from 'react-bootstrap/Table'
 import './css/Students.css'
 import ViewStudent from './ViewStudent'
+import AddStudent from './AddStudent'
 import { db } from '../API';
 
 class StudentInfo extends React.Component {
@@ -29,6 +30,16 @@ class StudentInfo extends React.Component {
 
         ), document.querySelector('#table'));
         this.individualStudent = true
+    }
+
+    renderCreateForm(student = {}) {
+        ReactDOM.render((
+            <div>
+                <div className='dialog-mask'></div>
+                <div><AddStudent student={student} /></div>
+            </div>
+        ), document.querySelector('#table'));
+
     }
 
     async renderTable() {
@@ -65,9 +76,14 @@ class StudentInfo extends React.Component {
         ), document.querySelector('#table'));
     }
 
+
+
     render() {
         return (
-            <div id="table">
+            <div>
+                <div id="table">
+                </div>
+                <div className='add-button' onClick={() => { this.renderCreateForm() }}>+</div>
             </div>
         );
     }

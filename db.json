@@ -22,7 +22,7 @@
       "id": 4281,
       "firstName": "Sophia",
       "lastName": "Rocha",
-      "age": 18,
+      "age": "12",
       "birthday": "Thu May 18 2017",
       "grade": 9,
       "gender": "female",
@@ -33,7 +33,7 @@
       "city": "Hasty",
       "state": "Kansas",
       "zip": 1599,
-      "about": "I am a super cool person",
+      "about": "hello",
       "guardian1": "Sosa Yates",
       "guardian2": "Holloway Bond",
       "teacherId": 1
@@ -89,7 +89,7 @@
       "email": "snowbeard@gmail.com",
       "phone": "+1 (954) 425-2915",
       "address1": "687 Taaffe Place",
-      "address2": "",
+      "address2": "#4",
       "city": "Tetherow",
       "state": "Missouri",
       "zip": 7039,
@@ -136,7 +136,7 @@
       "about": "Dolor laborum aute adipisicing cillum ex et incididunt ad mollit sunt. Culpa est ipsum anim deserunt pariatur pariatur ad dolore nisi. Cillum culpa deserunt excepteur veniam et qui est aute quis occaecat sunt aliquip consequat incididunt. Nisi eiusmod duis eiusmod fugiat dolore non cillum commodo elit aute amet.\r\n",
       "guardian1": "Bolton Baird",
       "guardian2": "Benson Rowland",
-      "teacherId": 3
+      "teacherId": 2
     },
     {
       "id": 383,
@@ -176,7 +176,7 @@
       "about": "Et do laboris non cupidatat cillum anim. Irure sunt fugiat proident sint officia deserunt est occaecat reprehenderit cupidatat. Veniam irure voluptate id aliquip reprehenderit reprehenderit ipsum pariatur id. Non quis do enim anim labore quis culpa nisi non. Non veniam anim officia duis nisi sunt voluptate veniam dolore eu do. In laborum nisi laborum in velit sint tempor.\r\n",
       "guardian1": "Stanley Morrow",
       "guardian2": "Wanda Rasmussen",
-      "teacherId": 3
+      "teacherId": 2
     },
     {
       "id": 970,
@@ -196,7 +196,7 @@
       "about": "Et aliquip est laboris duis sunt culpa minim esse labore occaecat irure. Ex cupidatat veniam eiusmod consectetur ad sit laboris sint velit ut. Consequat enim sit incididunt quis proident enim est ex ut laborum id. Exercitation ad mollit sint culpa non est commodo est. Duis tempor non qui officia aute pariatur. Cillum elit eu nisi fugiat deserunt mollit dolor qui ea aute anim.\r\n",
       "guardian1": "Dotson Scott",
       "guardian2": "Glenn Velez",
-      "teacherId": 3
+      "teacherId": 1
     }
   ],
   "Assignments": [
@@ -219,11 +219,6 @@
       "id": 4,
       "name": "Assignment4",
       "description": "This is the fourth assignment..."
-    },
-    {
-      "id": 5,
-      "name": "Assignment5",
-      "description": "This is the fifth assignment..."
     }
   ],
   "profile": {

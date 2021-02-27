@@ -12,7 +12,7 @@ import { Container } from 'react-bootstrap';
 import { db } from '../API';
 
 
-function ViewStudent(props) {
+function AddStudent(props) {
     let valueChanged = false;
 
     function handleChange(e) {
@@ -30,24 +30,25 @@ function ViewStudent(props) {
 
             // THIS NEEDS SOME REAL VALIDATION AND SANITATION
 
-            db.endpoints.Students.patch({ "id": props.student.id }, {
-                "address1": props.student.address1,
-                "address2": props.student.address2,
-                "city": props.student.city,
-                "state": props.student.state,
-                "zip": props.student.zip,
-                "about": props.student.about,
-                "age": props.student.age,
-                "birthday": props.student.birthday,
-                "firstName": props.student.firstName,
-                "lastName": props.student.lastName,
-                "gender": props.student.gender,
-                "grade": props.student.grade,
-                "guardian1": props.student.guardian1,
-                "guardian2": props.student.guardian2,
-                "phone": props.student.phone,
-                "email": props.student.email,
-                "teacherId": props.student.teacherId
+            db.endpoints.Students.create({
+                "id": Math.floor((Math.random() * 10000000) + 1),
+                "address1": props.student.address1 || "",
+                "address2": props.student.address2 || "",
+                "city": props.student.city || "",
+                "state": props.student.state || "",
+                "zip": props.student.zip || "",
+                "about": props.student.about || "",
+                "age": props.student.age || "",
+                "birthday": props.student.birthday || "",
+                "firstName": props.student.firstName || "",
+                "lastName": props.student.lastName || "",
+                "gender": props.student.gender || "",
+                "grade": props.student.grade || "",
+                "guardian1": props.student.guardian1 || "",
+                "guardian2": props.student.guardian2 || "",
+                "phone": props.student.phone || "",
+                "email": props.student.email || "",
+                "teacherId": props.student.teacherId || ""
             })
             renderStudentList()
         }
@@ -70,7 +71,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="firstName"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.firstName}
+                                // defaultValue={props.student.firstName}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -84,7 +85,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="lastName"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.lastName}
+                                // defaultValue={props.student.lastName}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -98,7 +99,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="age"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.age}
+                                // defaultValue={props.student.age}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -112,7 +113,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="birthday"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.birthday}
+                                // defaultValue={props.student.birthday}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -126,7 +127,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="gender"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.gender}
+                                // defaultValue={props.student.gender}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -140,7 +141,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="grade"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.grade}
+                                // defaultValue={props.student.grade}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -154,7 +155,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="guardian1"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.guardian1}
+                                // defaultValue={props.student.guardian1}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -168,7 +169,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="guardian2"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.guardian2}
+                                // defaultValue={props.student.guardian2}
                                 onChange={handleChange}
                             />
                         </InputGroup> */}
@@ -184,7 +185,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="address1"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.address1}
+                                // defaultValue={props.student.address1}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -198,7 +199,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="address2"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.address2}
+                                // defaultValue={props.student.address2}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -212,7 +213,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="city"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.city}
+                                // defaultValue={props.student.city}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -226,7 +227,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="state"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.state}
+                                // defaultValue={props.student.state}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -241,7 +242,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="zip"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.zip}
+                                // defaultValue={props.student.zip}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -255,7 +256,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="phone"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.phone}
+                                // defaultValue={props.student.phone}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -269,7 +270,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="email"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.email}
+                                // defaultValue={props.student.email}
                                 onChange={handleChange}
                             />
                         </InputGroup> */}
@@ -283,7 +284,7 @@ function ViewStudent(props) {
                             <FormControl
                                 id="teacherId"
                                 aria-describedby="basic-addon3"
-                                defaultValue={props.student.teacherId}
+                                // defaultValue={props.student.teacherId}
                                 onChange={handleChange}
                             />
                         </InputGroup>
@@ -297,7 +298,7 @@ function ViewStudent(props) {
                         </InputGroup.Text>
                             <FormControl as="textarea" rows={5} aria-describedby="basic-addon3"
                                 id="about"
-                                defaultValue={props.student.about}
+                                // defaultValue={props.student.about}
                                 onChange={handleChange} className="overflow-auto" />
                         </FormGroup>
                     </Col>
@@ -310,17 +311,10 @@ function ViewStudent(props) {
         ReactDOM.render((<div><Students /></div>), document.querySelector('#table'));
     }
 
-    function deleteStudent(id) {
-        if (window.confirm('Are you sure you want to delete this student?')) {
-            db.endpoints.Students.delete({ id }, {})
-            renderStudentList()
-        }
-    }
-
     return (
         <div className='dialog' >
             <Container fluid>
-                <div className='title'>{props.student.firstName} {props.student.lastName} <span className='form-delete' onClick={() => { deleteStudent(props.student.id) }}>Delete</span></div>
+                <div className='title'>New Student</div>
 
                 <div id="studentInfo">{renderStudentInfo()}</div>
             </Container>
@@ -331,4 +325,4 @@ function ViewStudent(props) {
     );
 }
 
-export default ViewStudent;
+export default AddStudent;

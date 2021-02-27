@@ -12,7 +12,23 @@
     margin: 10px;
 }
 
-.side-panel-item:hover {
+.add-button {
+    position: inherit;
+    cursor: pointer;
+    bottom: 25px;
+    right: 25px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    width: 100px;
+    border: 2px solid darkgray;
+    border-radius: 50px;
+    background-color: lightslategray;
+    margin: 10px;
+}
+
+.side-panel-item:hover,
+.add-button:hover {
     background-color: slategray;
 }
 
