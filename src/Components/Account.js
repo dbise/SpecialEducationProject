@@ -17,20 +17,48 @@ function saveActive() {
 }
 
 function Account(props) {
-
+  var changed = [];
   const [disabled, setDisabled] = useState(true);
   function handleChange(e) {
-    console.log(e.target.value);
+    console.log(e.target.id);
+    if(!changed.includes(e.target.id)){
+      changed.push(e.target.id);
+    }
+
     setDisabled(false);
   }
-  function handleSubmit(e) {
-    alert("This will allow user to change info and save");
-    db.endpoints.Teachers.update(userId, "Teachers")
+  const handleSubmit= async e =>  {
+    var validInput = true;
+    const userDB =  await db.endpoints.Teachers.getOne(userId);
+    console.log(userDB);
+    var stringArray = {};
+    for (var i = 0; i < changed.length; i++) {
+      var elementToGet = document.getElementById(changed[i]);
+      if(changed[i]=="age"){
+        var tempAge = parseInt(elementToGet.value);
+        if(!isNaN(tempAge)){
+          stringArray[changed[i]]=tempAge;
+        }
+        else{
+          validInput = false;
+        }
+      }
+      else{
+        stringArray[changed[i]]=elementToGet.value;
+      }
+    }
+    if(validInput){
+      db.endpoints.Teachers.patch({ "id": userId }, stringArray);
+      alert("User info was saved");
+    }
+    else{
+      alert("Check input and make sure it is the right format");
+    }
   }
-  const userInfo = JSON.parse(localStorage.getItem("user"));
-  const userId = userInfo.id;
-  const user = db.endpoints.Teachers.getOne(userId);
-  console.log(user);
+  const userDB = JSON.parse(localStorage.getItem("user"));
+  const userId = userDB.id;
+  //const userDB = {};
+  console.log(userDB);
   return (
     <div>
       <Container>
@@ -52,9 +80,9 @@ function Account(props) {
               </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
-                id="basic-url"
+                id="firstName"
                 aria-describedby="basic-addon3"
-                defaultValue={userInfo.firstName}
+                defaultValue={userDB.firstName}
                 onChange={handleChange}
               />
             </InputGroup>
@@ -69,9 +97,9 @@ function Account(props) {
             </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
-                id="basic-url"
+                id="lastName"
                 aria-describedby="basic-addon3"
-                defaultValue={userInfo.lastName}
+                defaultValue={userDB.lastName}
                 onChange={handleChange}
               />
             </InputGroup>
@@ -86,9 +114,9 @@ function Account(props) {
             </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
-                id="basic-url"
+                id="age"
                 aria-describedby="basic-addon3"
-                defaultValue={userInfo.age}
+                defaultValue={userDB.age}
                 onChange={handleChange}
               />
             </InputGroup>
@@ -103,9 +131,9 @@ function Account(props) {
             </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
-                id="basic-url"
+                id="userName"
                 aria-describedby="basic-addon3"
-                defaultValue={userInfo.userName}
+                defaultValue={userDB.userName}
                 onChange={handleChange}
               />
             </InputGroup>
@@ -121,9 +149,9 @@ function Account(props) {
               </InputGroup.Prepend>
               <FormControl
                 type="password"
-                id="basic-url"
+                id="password"
                 aria-describedby="basic-addon3"
-                defaultValue={userInfo.password}
+                defaultValue={userDB.password}
                 onChange={handleChange}
               />
             </InputGroup>

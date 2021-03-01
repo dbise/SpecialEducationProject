@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './css/AccountDropdown.css'
-
+function userLogOut(){
+  localStorage.removeItem("user");
+  window.location.reload(false);
+}
 function AccountDropdown(props) {
     return (
         <div>
@@ -32,7 +35,13 @@ function AccountDropdown(props) {
                     </Link>
                 </li>
                 <li className='profile-list-item'>
+                  <Link
+                    id="userLogOut"
+                    style={{ textDecoration: 'none' }}
+                    onClick={userLogOut}
+                    >
                     Log Out
+                  </Link>
                 </li>
             </ul>
         </div>
