@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { db } from '../API'
 import deleteIcon from '../resources/delete.png'
 import './css/AssignmentList.css'
+import DeleteDialog from './DeleteDialog'
 import EditAssignment from './EditAssignment'
 
 class AssignmentList extends React.Component {
@@ -30,10 +31,19 @@ class AssignmentList extends React.Component {
         ), document.querySelector('#assignments-dialog'));
     }
 
-    async handleDelete(assignment) {
-        // need to prompt user for confirmation before deleting
+    async deleteAssignment(assignment) {
         await db.endpoints.Assignments.delete(assignment)
         window.location.reload(false)
+    }
+
+    handleDelete(assignment) {
+        ReactDOM.render((
+            <div>
+                <div className='dialog-mask'></div>
+                <DeleteDialog objectToDelete = "assignment" confirmDelete = {() => this.deleteAssignment(assignment)}/>
+            </div>
+    
+        ), document.querySelector('#assignments-dialog'));
     }
 
     async renderList() {
