@@ -2,13 +2,14 @@ import React from 'react'
 // import React, { useState } from 'react'
 import './css/ViewStudent.css'
 import ReactDOM from 'react-dom'
-import Students from './Students'
+import Students from './StudentList'
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'react-bootstrap';
+import deleteIcon from '../resources/delete.png'
 import { db } from '../API';
 
 
@@ -49,7 +50,7 @@ function ViewStudent(props) {
                 "email": props.student.email,
                 "teacherId": props.student.teacherId
             })
-            renderStudentList()
+            window.location.reload(false)
         }
 
     }
@@ -306,27 +307,35 @@ function ViewStudent(props) {
         )
     }
 
-    function renderStudentList() {
-        ReactDOM.render((<div><Students /></div>), document.querySelector('#table'));
-    }
+    // function renderStudentList() {
+    //     ReactDOM.render((<div><Students /></div>), document.querySelector('#table'));
+    // }
 
     function deleteStudent(id) {
         if (window.confirm('Are you sure you want to delete this student?')) {
             db.endpoints.Students.delete({ id }, {})
-            renderStudentList()
+            window.location.reload(false)
         }
     }
 
     return (
         <div className='dialog' >
             <Container fluid>
-                <div className='title'>{props.student.firstName} {props.student.lastName} <span className='form-delete' onClick={() => { deleteStudent(props.student.id) }}>Delete</span></div>
-
+                <div className='title'>
+                    {props.student.firstName}
+                    {' '} 
+                    {props.student.lastName}                     
+                    <img
+                            className="delete-student"
+                            src={deleteIcon} alt="Delete Icon"
+                            onClick={() => {deleteStudent(props.student.id)}}
+                    />
+                </div>
                 <div id="studentInfo">{renderStudentInfo()}</div>
             </Container>
             <div className='form-submit' onClick={() => { handleSubmit() }}>Save</div>
 
-            <div className='form-cancel' onClick={() => { renderStudentList() }}>Cancel</div>
+            <div className='form-cancel' onClick={() => { window.location.reload(false) }}>Cancel</div>
         </div>
     );
 }

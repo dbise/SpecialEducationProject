@@ -1,11 +1,19 @@
 import React from 'react'
 import './css/EditAssignment.css'
+import deleteIcon from '../resources/delete.png'
 import { db } from '../API'
 
 class EditAssignment extends React.Component {
     constructor() {
         super()
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    async handleDelete(assignment) {
+        if (window.confirm('Are you sure you want to delete this assignment?')) {
+            await db.endpoints.Assignments.delete(assignment)
+            window.location.reload(false)
+        }
     }
 
     async handleSubmit() {
@@ -26,6 +34,11 @@ class EditAssignment extends React.Component {
                         type="text"
                         defaultValue={ this.props.assignmentData.name }
                         ref={myinput => (this.assignmentName = myinput)}
+                    />
+                    <img
+                            className="delete-assignment"
+                            src={deleteIcon} alt="Delete Icon"
+                            onClick={() => {this.handleDelete(this.props.assignmentData)}}
                     />
                 </div>
                 <div >

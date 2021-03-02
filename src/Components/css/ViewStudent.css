@@ -1,7 +1,9 @@
 .dialog {
     position: absolute;
     width: 95%;
-    height: 95%;
+    height: 90%;
+    min-width: 900px;
+    min-height: 675px;
     top: 40px;
     left: 50px;
     border-radius: 15px;
@@ -14,8 +16,21 @@
     color: dimgray;
     top: 5px;
     left: 5px;
-    /* padding: 15px 15px 15px 0; */
     padding: 1%;
+}
+
+.delete-student {
+    position: absolute;
+    height: 20px;
+    margin-top: 5px;
+    right: 25px;
+    border-radius: 5px;
+}
+.delete-student:hover {
+    background-color: gainsboro;
+}
+.delete-student:active {
+    background-color: lightgray;
 }
 
 .student-info {
@@ -95,15 +110,18 @@
 }
 
 .form-submit-changed:hover {
-    background-color: rgb(85, 179, 98);
+    background-color: slategray;
+    /* background-color: rgb(85, 179, 98); */
 }
 
 .form-cancel:hover {
-    background-color: rgb(248, 51, 67);
+    background-color: slategray;
+    /* background-color: rgb(248, 51, 67); */
 }
 
 .form-cancel:active {
-    background-color: rgb(248, 51, 67);
+    background-color: dimgray;
+    /* background-color: rgb(248, 51, 67); */
 }
 
 @media screen and (max-width: 1000px) {
@@ -116,7 +134,6 @@
 div#studentInfo form {
     width: 98%;
     margin-right: auto;
-    /* margin-left: auto; */
 }
 
 div#studentInfo .input-group-prepend {

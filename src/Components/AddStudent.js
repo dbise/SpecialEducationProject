@@ -2,7 +2,7 @@ import React from 'react'
 // import React, { useState } from 'react'
 import './css/ViewStudent.css'
 import ReactDOM from 'react-dom'
-import Students from './Students'
+import Students from './StudentList'
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
@@ -50,7 +50,7 @@ function AddStudent(props) {
                 "email": props.student.email || "",
                 "teacherId": props.student.teacherId || ""
             })
-            renderStudentList()
+            window.location.reload(false)
         }
 
     }
@@ -307,9 +307,9 @@ function AddStudent(props) {
         )
     }
 
-    function renderStudentList() {
-        ReactDOM.render((<div><Students /></div>), document.querySelector('#table'));
-    }
+    // function renderStudentList() {
+    //     ReactDOM.render((<div><Students /></div>), document.querySelector('#table'));
+    // }
 
     return (
         <div className='dialog' >
@@ -320,7 +320,7 @@ function AddStudent(props) {
             </Container>
             <div className='form-submit' onClick={() => { handleSubmit() }}>Save</div>
 
-            <div className='form-cancel' onClick={() => { renderStudentList() }}>Cancel</div>
+            <div className='form-cancel' onClick={ props.goBack }>Cancel</div>
         </div>
     );
 }
