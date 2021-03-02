@@ -1,4 +1,4 @@
-.create-assignment-dialog {
+.edit-assignment-dialog {
     position: absolute;
     width: 95%;
     height: 95%;
@@ -7,7 +7,7 @@
     border-radius: 15px;
     background-color: white;
 }
-.new-assignment-title {
+.edit-assignment-title {
     position: relative;
     font-size: 25px;
     color: dimgray;
@@ -15,13 +15,13 @@
     left: 20px;
     padding: 15px;
 }
-.new-assignment-title:hover {
+.edit-assignment-title:hover {
     border: 2px solid darkgray;
 }
-.new-assignment-title:focus {
+.edit-assignment-title:focus {
     outline-color: lightskyblue;
 }
-.new-assignment-description {
+.edit-assignment-description {
     position: relative;
     resize: both;
     height: 50px;
@@ -32,10 +32,10 @@
     left: 20px;
     padding: 15px;
 }
-.new-assignment-description:hover {
+.edit-assignment-description:hover {
     border: 2px solid darkgray;
 }
-.new-assignment-description:focus {
+.edit-assignment-description:focus {
     outline-color: lightskyblue;
 }
 .add-problems {

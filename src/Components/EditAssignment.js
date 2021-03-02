@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/CreateAssignment.css'
+import './css/EditAssignment.css'
 import { db } from '../API'
 
 class EditAssignment extends React.Component {
@@ -19,10 +19,10 @@ class EditAssignment extends React.Component {
 
     render() {
         return (
-            <div className='create-assignment-dialog'>
+            <div className='edit-assignment-dialog'>
                 <div>
                     <input
-                        className='new-assignment-title'
+                        className='edit-assignment-title'
                         type="text"
                         defaultValue={ this.props.assignmentData.name }
                         ref={myinput => (this.assignmentName = myinput)}
@@ -30,7 +30,7 @@ class EditAssignment extends React.Component {
                 </div>
                 <div >
                     <textarea
-                        className='new-assignment-description'
+                        className='edit-assignment-description'
                         type="text"
                         cols="75"
                         defaultValue={ this.props.assignmentData.description }
