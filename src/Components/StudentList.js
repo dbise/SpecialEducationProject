@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/Table'
 import './css/Students.css'
 import './css/StudentList.css'
 import deleteIcon from '../resources/delete.png'
+import folderIcon from '../resources/folder-alt.png'
 import ViewStudent from './ViewStudent'
 import { db } from '../API';
 
@@ -55,15 +56,19 @@ class StudentInfo extends React.Component {
             const { id, firstName, lastName, age, grade } = student
             return (
                 <tr key={id} className="student-row" >
-                    <td onClick={() => { this.showSingleStudent(student) }}> { firstName } </td>
-                    <td onClick={() => { this.showSingleStudent(student) }}> { lastName } </td>
-                    <td onClick={() => { this.showSingleStudent(student) }}> { age } </td>
-                    <td onClick={() => { this.showSingleStudent(student) }}> { grade } </td>
-                    <td onClick={() => { this.deleteStudent(student.id) }}>
-                        <img
-                                className="delete-student-list-view"
-                                src={deleteIcon} alt="Delete Icon"  
-                        />
+                    <td onClick={() => { this.showSingleStudent(student) }}> {firstName} </td>
+                    <td onClick={() => { this.showSingleStudent(student) }}> {lastName} </td>
+                    <td onClick={() => { this.showSingleStudent(student) }}> {age} </td>
+                    <td onClick={() => { this.showSingleStudent(student) }}> {grade} </td>
+                    <td >
+                        <img /*onClick={() => { this.deleteStudent(student.id) }}*/
+                            className="student-assignments-list-view"
+                            src={folderIcon} alt="Delete Icon" />
+
+
+                        <img onClick={() => { this.deleteStudent(student.id) }}
+                            className="delete-student-list-view"
+                            src={deleteIcon} alt="Delete Icon" />
                     </td>
                 </tr>
             )
@@ -83,7 +88,7 @@ class StudentInfo extends React.Component {
 
     render() {
         return (
-            <div className = "student-list">
+            <div className="student-list">
                 <div id="table">
                 </div>
             </div>

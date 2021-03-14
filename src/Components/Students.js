@@ -17,19 +17,14 @@ function Students(props) {
     let addStudentDialog
     let addStudentDialogMask
     if (showAddStudentDialog) {
-        addStudentDialog = <AddStudent student = {{}} goBack={cancel} />
+        addStudentDialog = <AddStudent student={{}} goBack={cancel} />
         addStudentDialogMask = <div className='dialog-mask' />
     }
 
     return (
         <div id='students' className='students'>
             <div className='side-panel'>
-                <div
-                    className='side-panel-item'
-                    onClick={() => setShowAddStudentDialog(true)}
-                >
-                    Add Student +
-                </div>
+                <div className='side-panel-item' onClick={() => setShowAddStudentDialog(true)}>Add Student +</div>
             </div>
             <div id="assignments-dialog">
                 {content}

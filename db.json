@@ -37,7 +37,11 @@
       "guardian1": "Sosa Yates",
       "guardian2": "Holloway Bond",
       "teacherId": 1,
-      "assigned":[1, 2, 3]
+      "assigned": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 3855,
@@ -58,7 +62,9 @@
       "guardian1": "Tonia Shaw",
       "guardian2": "Twila Hull",
       "teacherId": 1,
-      "assigned":[3]
+      "assigned": [
+        3
+      ]
     },
     {
       "id": 1364,
@@ -79,7 +85,9 @@
       "guardian1": "Mitchell Barker",
       "guardian2": "Lenore Morgan",
       "teacherId": 1,
-      "assigned":[3]
+      "assigned": [
+        3
+      ]
     },
     {
       "id": 1724,
@@ -100,7 +108,9 @@
       "guardian1": "Elma Clemons",
       "guardian2": "George Frye",
       "teacherId": 2,
-      "assigned":[2]
+      "assigned": [
+        2
+      ]
     },
     {
       "id": 795,
@@ -121,7 +131,9 @@
       "guardian1": "Lolita Haney",
       "guardian2": "Maricela Holman",
       "teacherId": 2,
-      "assigned":[1]
+      "assigned": [
+        1
+      ]
     },
     {
       "id": 1666,
@@ -142,7 +154,10 @@
       "guardian1": "Bolton Baird",
       "guardian2": "Benson Rowland",
       "teacherId": 2,
-      "assigned":[2, 3]
+      "assigned": [
+        2,
+        3
+      ]
     },
     {
       "id": 383,
@@ -163,7 +178,9 @@
       "guardian1": "Latisha Avila",
       "guardian2": "Bonita Kim",
       "teacherId": 2,
-      "assigned":[1]
+      "assigned": [
+        1
+      ]
     },
     {
       "id": 3716,
@@ -184,7 +201,9 @@
       "guardian1": "Stanley Morrow",
       "guardian2": "Wanda Rasmussen",
       "teacherId": 2,
-      "assigned":[1]
+      "assigned": [
+        1
+      ]
     },
     {
       "id": 3717,
@@ -205,7 +224,9 @@
       "guardian1": "Stanley Morrow",
       "guardian2": "Wanda Rasmussen",
       "teacherId": 2,
-      "assigned":[3]
+      "assigned": [
+        3
+      ]
     },
     {
       "id": 3718,
@@ -226,7 +247,7 @@
       "guardian1": "Stanley Morrow",
       "guardian2": "Wanda Rasmussen",
       "teacherId": 2,
-      "assigned":[]
+      "assigned": []
     },
     {
       "id": 3720,
@@ -247,7 +268,9 @@
       "guardian1": "Stanley Morrow",
       "guardian2": "Wanda Rasmussen",
       "teacherId": 2,
-      "assigned":[2]
+      "assigned": [
+        2
+      ]
     },
     {
       "id": 3719,
@@ -268,7 +291,10 @@
       "guardian1": "Stanley Morrow",
       "guardian2": "Wanda Rasmussen",
       "teacherId": 2,
-      "assigned":[1, 2]
+      "assigned": [
+        1,
+        2
+      ]
     },
     {
       "id": 970,
@@ -289,7 +315,10 @@
       "guardian1": "Dotson Scott",
       "guardian2": "Glenn Velez",
       "teacherId": 1,
-      "assigned":[1, 2]
+      "assigned": [
+        1,
+        2
+      ]
     }
   ],
   "Assignments": [
@@ -299,8 +328,18 @@
       "description": "This assignment will test the students grammar and punctuation skills.",
       "type": "Writing",
       "subType": "Sentences",
-      "Questions":["Candy taste sweet", "I gonna get a new cat.", "she like dogs", "Me favorite coler is red"],
-      "Answers":["Candy tastes sweet.", "I am going to get a new cat.", "She likes dogs.", "My favorite color is red."]
+      "Questions": [
+        "Candy taste sweet",
+        "I gonna get a new cat.",
+        "she like dogs",
+        "Me favorite coler is red"
+      ],
+      "Answers": [
+        "Candy tastes sweet.",
+        "I am going to get a new cat.",
+        "She likes dogs.",
+        "My favorite color is red."
+      ]
     },
     {
       "id": 2,
@@ -321,6 +360,11 @@
   "Completed": {
     "studentId": 970,
     "assignmentId": 1,
-    "studentAnswers": ["Candy taste sweets.", "Im going get a new cat.", "she like dogs.", "My favorite coler is red"]
+    "studentAnswers": [
+      "Candy taste sweets.",
+      "Im going get a new cat.",
+      "she like dogs.",
+      "My favorite coler is red"
+    ]
   }
 }

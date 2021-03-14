@@ -14,11 +14,14 @@
 }
 
 .student-row {
+    border: solid 2px transparent;
     cursor: pointer;
 }
+
 .student-row:hover {
     border: solid 2px lightgray;
 }
+
 .student-row:active {
     background-color: gainsboro;
 }
@@ -29,8 +32,17 @@
     right: 20px;
     border-radius: 5px;
 }
-.delete-student-list-view:hover {
+
+.delete-student-list-view:hover,
+.student-assignments-list-view:hover {
     background-color: lightgray;
+}
+
+.student-assignments-list-view {
+    position: absolute;
+    height: 20px;
+    right: 50px;
+    border-radius: 5px;
 }
 
 .dialog-mask {

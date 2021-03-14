@@ -29,7 +29,7 @@ function ViewStudent(props) {
     function handleSubmit() {
         if (valueChanged) {
 
-            // THIS NEEDS SOME REAL VALIDATION AND SANITATION
+            // THIS NEEDS SOME REAL VALIDATION AND SANITIZATION
 
             db.endpoints.Students.patch({ "id": props.student.id }, {
                 "address1": props.student.address1,
@@ -323,12 +323,12 @@ function ViewStudent(props) {
             <Container fluid>
                 <div className='title'>
                     {props.student.firstName}
-                    {' '} 
-                    {props.student.lastName}                     
+                    {' '}
+                    {props.student.lastName}
                     <img
-                            className="delete-student"
-                            src={deleteIcon} alt="Delete Icon"
-                            onClick={() => {deleteStudent(props.student.id)}}
+                        className="delete-student"
+                        src={deleteIcon} alt="Delete Icon"
+                        onClick={() => { deleteStudent(props.student.id) }}
                     />
                 </div>
                 <div id="studentInfo">{renderStudentInfo()}</div>

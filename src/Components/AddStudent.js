@@ -28,7 +28,7 @@ function AddStudent(props) {
     function handleSubmit() {
         if (valueChanged) {
 
-            // THIS NEEDS SOME REAL VALIDATION AND SANITATION
+            // THIS NEEDS SOME REAL VALIDATION AND SANITIZATION
 
             db.endpoints.Students.create({
                 "id": Math.floor((Math.random() * 10000000) + 1),
@@ -320,7 +320,7 @@ function AddStudent(props) {
             </Container>
             <div className='form-submit' onClick={() => { handleSubmit() }}>Save</div>
 
-            <div className='form-cancel' onClick={ props.goBack }>Cancel</div>
+            <div className='form-cancel' onClick={props.goBack}>Cancel</div>
         </div>
     );
 }
