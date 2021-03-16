@@ -6,6 +6,7 @@ import './css/StudentList.css'
 import deleteIcon from '../resources/delete.png'
 import folderIcon from '../resources/folder-alt.png'
 import ViewStudent from './ViewStudent'
+import StudentAssignmentList from './StudentAssignmentList'
 import { db } from '../API';
 
 class StudentInfo extends React.Component {
@@ -34,6 +35,18 @@ class StudentInfo extends React.Component {
         this.individualStudent = true
     }
 
+    showStudentAssignments(student) {
+        ReactDOM.render((
+            <div>
+                {/* <div className='dialog-mask'></div> */}
+                <StudentAssignmentList student={student} />
+            </div>
+
+        ), document.querySelector('#students'));
+        this.individualStudent = true
+    }
+
+
     async deleteStudent(id) {
         if (window.confirm('Are you sure you want to delete this student?')) {
             await db.endpoints.Students.delete({ id }, {})
@@ -61,9 +74,9 @@ class StudentInfo extends React.Component {
                     <td onClick={() => { this.showSingleStudent(student) }}> {age} </td>
                     <td onClick={() => { this.showSingleStudent(student) }}> {grade} </td>
                     <td >
-                        <img /*onClick={() => { this.deleteStudent(student.id) }}*/
+                        <img onClick={() => { this.showStudentAssignments(student) }}
                             className="student-assignments-list-view"
-                            src={folderIcon} alt="Delete Icon" />
+                            src={folderIcon} alt="Folder Icon" />
 
 
                         <img onClick={() => { this.deleteStudent(student.id) }}
