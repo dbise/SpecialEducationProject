@@ -16,7 +16,7 @@ class AssignmentList extends React.Component {
             assignments => {
                 console.log(this.props.student.assigned)
                 console.log(assignments.data)
-                this.assignmentList = assignments.data.filter(a => a.id in this.props.student.assigned);
+                this.assignmentList = assignments.data.filter(a => this.props.student.assigned.includes(a.id));
                 console.log(this.assignmentList)
 
                 if (this.assignmentList.length > 0) {
