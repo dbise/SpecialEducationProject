@@ -7,6 +7,9 @@ function Students(props) {
     const [showContent, setShowContent] = useState(false)
     const [showAddStudentDialog, setShowAddStudentDialog] = useState(false)
 
+    // Just console logged this for now to clear up some warnings in the browser
+    console.log(showContent)
+
     let content = <StudentList />
 
     function cancel() {

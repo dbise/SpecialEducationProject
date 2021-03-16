@@ -1,8 +1,8 @@
 import React from 'react'
 // import React, { useState } from 'react'
 import './css/ViewStudent.css'
-import ReactDOM from 'react-dom'
-import Students from './StudentList'
+// import ReactDOM from 'react-dom'
+// import Students from './StudentList'
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';

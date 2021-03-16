@@ -1,7 +1,8 @@
 import React from 'react'
 import './css/Settings.css'
 //begin: json-server
-import Api, { db } from '../API';
+// import Api, { db } from '../API';
+import { db } from '../API';
 //end: json-server
 
 

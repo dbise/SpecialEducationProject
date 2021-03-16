@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './css/Account.css'
 // import './css/Account.css'
 import { db } from '../API';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,48 +10,48 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import profile from '../resources/arwen.png'
 
-const localUserInfo = JSON.parse(localStorage.getItem('user'));
+// const localUserInfo = JSON.parse(localStorage.getItem('user'));
 
-function saveActive() {
-  console.log("hello");
-}
+// function saveActive() {
+//   console.log("hello");
+// }
 
 function Account(props) {
   var changed = [];
   const [disabled, setDisabled] = useState(true);
   function handleChange(e) {
     console.log(e.target.id);
-    if(!changed.includes(e.target.id)){
+    if (!changed.includes(e.target.id)) {
       changed.push(e.target.id);
     }
 
     setDisabled(false);
   }
-  const handleSubmit= async e =>  {
+  const handleSubmit = async e => {
     var validInput = true;
-    const userDB =  await db.endpoints.Teachers.getOne(userId);
+    const userDB = await db.endpoints.Teachers.getOne(userId);
     console.log(userDB);
     var stringArray = {};
     for (var i = 0; i < changed.length; i++) {
       var elementToGet = document.getElementById(changed[i]);
-      if(changed[i]=="age"){
+      if (changed[i] === "age") {
         var tempAge = parseInt(elementToGet.value);
-        if(!isNaN(tempAge)){
-          stringArray[changed[i]]=tempAge;
+        if (!isNaN(tempAge)) {
+          stringArray[changed[i]] = tempAge;
         }
-        else{
+        else {
           validInput = false;
         }
       }
-      else{
-        stringArray[changed[i]]=elementToGet.value;
+      else {
+        stringArray[changed[i]] = elementToGet.value;
       }
     }
-    if(validInput){
+    if (validInput) {
       db.endpoints.Teachers.patch({ "id": userId }, stringArray);
       alert("User info was saved");
     }
-    else{
+    else {
       alert("Check input and make sure it is the right format");
     }
   }
@@ -65,7 +65,7 @@ function Account(props) {
         <div class="account-title">
           Account Overview
         </div>
-        <img class="account-img" src={profile} />
+        <img class="account-img" src={profile} alt="User profile" />
         <button class="account-img-button"
           onClick={e => alert("This will allow user to upload new image")}
         >
