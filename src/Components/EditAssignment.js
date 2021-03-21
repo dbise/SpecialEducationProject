@@ -53,10 +53,10 @@ class EditAssignment extends React.Component {
                 <div className='add-problems'>
                     + Add a problem
                 </div>
-                <div className='save' onClick={this.handleSubmit}>
+                <div className='standard-button save' onClick={this.handleSubmit}>
                     Save
                 </div>
-                <div className='cancel' onClick={ () => {window.location.reload(false)} }>
+                <div className='standard-button cancel' onClick={ () => {window.location.reload(false)} }>
                     Cancel
                 </div>
             </div>

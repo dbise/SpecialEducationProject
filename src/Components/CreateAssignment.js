@@ -44,10 +44,10 @@ class CreateAssignment extends React.Component {
                 <div className='add-problems'>
                     + Add a problem
                 </div>
-                <div className='save' onClick={this.handleSubmit}>
+                <div className='standard-button save' onClick={this.handleSubmit}>
                     Save
                 </div>
-                <div className='cancel' onClick={this.props.goBack}>
+                <div className='standard-button cancel' onClick={this.props.goBack}>
                     Cancel
                 </div>
             </div>

@@ -18,7 +18,7 @@ function AddStudent(props) {
     function handleChange(e) {
         valueChanged = true;
         try {
-            document.querySelector(".form-submit").className = "form-submit-changed"
+            document.querySelector(".form-submit").className = "standard-button form-submit-changed"
         }
         catch { }
 
@@ -318,9 +318,9 @@ function AddStudent(props) {
 
                 <div id="studentInfo">{renderStudentInfo()}</div>
             </Container>
-            <div className='form-submit' onClick={() => { handleSubmit() }}>Save</div>
+            <div className='standard-button form-submit' onClick={() => { handleSubmit() }}>Save</div>
 
-            <div className='form-cancel' onClick={props.goBack}>Cancel</div>
+            <div className='standard-button form-cancel' onClick={props.goBack}>Cancel</div>
         </div>
     );
 }

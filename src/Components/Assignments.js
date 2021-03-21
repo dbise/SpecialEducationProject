@@ -28,12 +28,12 @@ function Assignments(props) {
         <div id='assignments' className='assignments'>
             <div className='side-panel'>
                 <div
-                    className='side-panel-item'
+                    className='standard-button side-panel-item'
                     onClick={() => setShowCreateDialog(true)}
                 >
                     Create Assignment +
                 </div>
-                <div className='side-panel-item' onClick={() => setShowContent(true)}>
+                <div className='standard-button side-panel-item' onClick={() => setShowContent(true)}>
                     Files
                 </div>
             </div>

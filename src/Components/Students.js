@@ -27,7 +27,7 @@ function Students(props) {
     return (
         <div id='students' className='students'>
             <div className='side-panel'>
-                <div className='side-panel-item' onClick={() => setShowAddStudentDialog(true)}>Add Student +</div>
+                <div className='standard-button side-panel-item' onClick={() => setShowAddStudentDialog(true)}>Add Student +</div>
             </div>
             <div id="assignments-dialog">
                 {content}

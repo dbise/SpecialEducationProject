@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { db } from '../API'
 import deleteIcon from '../resources/delete.png'
 import './css/AssignmentList.css'
+import './css/StudentAssignmentList.css'
 import EditAssignment from './EditAssignment'
 
 class AssignmentList extends React.Component {
@@ -72,8 +73,13 @@ class AssignmentList extends React.Component {
             )
         })
         ReactDOM.render((
-            <div id="assignment-list">{body}
-                <div className='cancel' onClick={() => { window.location.reload(false) }}>Back</div>
+            <div>
+                <div className='standard-button back-to-students-button' onClick={() => { window.location.reload(false) }}>
+                    Back
+                </div>
+                <div id="assignment-list" className="student-assignment-list">
+                    {body}
+                </div>
             </div>
 
         ), document.querySelector("#assignment-list"));

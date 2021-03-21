@@ -5,6 +5,7 @@
     left: 215px;
     height: 80%;
     width: 75%;
+    min-width: 900px;
     margin: 15px;
     overflow-y: scroll;
 }
@@ -19,17 +20,16 @@
 }
 
 .student-row:hover {
-    border: solid 2px lightgray;
+    border-left: solid 3px lightgray;
 }
 
 .student-row:active {
     background-color: gainsboro;
 }
-
 .delete-student-list-view {
     position: absolute;
     height: 20px;
-    right: 20px;
+    right: 10px;
     border-radius: 5px;
 }
 
@@ -41,15 +41,6 @@
 .student-assignments-list-view {
     position: absolute;
     height: 20px;
-    right: 50px;
+    right: 40px;
     border-radius: 5px;
-}
-
-.dialog-mask {
-    position: absolute;
-    width: 100%;
-    height: 105%;
-    top: 0px;
-    background-color: gray;
-    opacity: 50%;
 }

@@ -48,43 +48,19 @@
 }
 .save {
     position: inherit;
-    cursor: pointer;
     bottom: 25px;
     right: 150px;
     line-height: 50px;
-    text-align: center;
-    color: white; 
     width: 100px;
-    border: 2px solid darkgray;
-    border-radius: 50px;
-    background-color: lightslategray;
     margin: 10px;
-}
-.save:hover {
-    background-color: slategray;
-}
-.save:active {
-    background-color: dimgray;
 }
 .cancel {
     position: inherit;
-    cursor: pointer;
     bottom: 25px;
     right: 25px;
     line-height: 50px;
-    text-align: center;
-    color: white; 
     width: 100px;
-    border: 2px solid darkgray;
-    border-radius: 50px;
-    background-color: lightslategray;
     margin: 10px;
-}
-.cancel:hover {
-    background-color: slategray;
-}
-.cancel:active {
-    background-color: dimgray;
 }
 @media screen and (max-width: 1000px){
     .create-assignment-dialog {
