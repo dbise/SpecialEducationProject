@@ -37,9 +37,15 @@ class StudentInfo extends React.Component {
 
     showStudentAssignments(student) {
         ReactDOM.render((
-            <div>
-                {/* <div className='dialog-mask'></div> */}
-                <StudentAssignmentList student={student} />
+            <div id='students' className='students'>  <div className='side-panel'>
+                <div className='standard-button side-panel-item' onClick={() => window.location.reload(false)}>Back</div>
+            </div>
+                <div id="students-dialog">
+                    <div>
+                        {/* <div className='dialog-mask'></div> */}
+                        <StudentAssignmentList student={student} />
+                    </div>
+                </div>
             </div>
 
         ), document.querySelector('#students'));

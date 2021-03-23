@@ -27,7 +27,7 @@ class AssignmentList extends React.Component {
                     ReactDOM.render((
                         <div>
                             <h3>This student has nothing assigned to them!</h3>
-                            <div className='cancel' onClick={() => { window.location.reload(false) }}>Back</div>
+                            {/* <div className='cancel' onClick={() => { window.location.reload(false) }}>Back</div> */}
 
                         </div>
                     ), document.querySelector("#assignment-list"));
@@ -37,13 +37,17 @@ class AssignmentList extends React.Component {
     }
 
     showEditAssignment(assignment) {
+        console.log(assignment)
         ReactDOM.render((
-            <div>
-                <div className='dialog-mask'></div>
-                <EditAssignment assignmentData={assignment} />
+            <div id='students' className='students'>
+                <div id="students-dialog">
+                    <div>
+                        <div className='dialog-mask'></div>
+                        <EditAssignment assignmentData={assignment} />
+                    </div>
+                </div>
             </div>
-
-        ), document.querySelector('#assignments-dialog'));
+        ), document.querySelector('#students-dialog'));
     }
 
     async handleDelete(assignment) {
@@ -74,9 +78,7 @@ class AssignmentList extends React.Component {
         })
         ReactDOM.render((
             <div>
-                <div className='standard-button back-to-students-button' onClick={() => { window.location.reload(false) }}>
-                    Back
-                </div>
+                {/* <div className='standard-button back-to-students-button' onClick={() => { window.location.reload(false) }}>Back</div> */}
                 <div id="assignment-list" className="student-assignment-list">
                     {body}
                 </div>
