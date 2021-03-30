@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import './css/Account.css'
-// import './css/Account.css'
 import { db } from '../API';
-// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import profile from '../resources/arwen.png'
-
-// const localUserInfo = JSON.parse(localStorage.getItem('user'));
-
-// function saveActive() {
-//   console.log("hello");
-// }
+import photo from '../resources/photo.png'
 
 function Account(props) {
   var changed = [];
   const [disabled, setDisabled] = useState(true);
+
+  if(!disabled) {
+    try {
+      document.querySelector(".account-change-button").className = "standard-button account-change-button-changed"
+    }
+    catch { }
+  }
+
   function handleChange(e) {
     console.log(e.target.id);
     if (!changed.includes(e.target.id)) {
@@ -27,57 +28,60 @@ function Account(props) {
 
     setDisabled(false);
   }
+
   const handleSubmit = async e => {
-    var validInput = true;
-    const userDB = await db.endpoints.Teachers.getOne(userId);
-    console.log(userDB);
-    var stringArray = {};
-    for (var i = 0; i < changed.length; i++) {
-      var elementToGet = document.getElementById(changed[i]);
-      if (changed[i] === "age") {
-        var tempAge = parseInt(elementToGet.value);
-        if (!isNaN(tempAge)) {
-          stringArray[changed[i]] = tempAge;
+    if (!disabled) {
+      var validInput = true;
+      const userDB = await db.endpoints.Teachers.getOne(userId);
+      console.log(userDB);
+      var stringArray = {};
+      for (var i = 0; i < changed.length; i++) {
+        var elementToGet = document.getElementById(changed[i]);
+        if (changed[i] === "age") {
+          var tempAge = parseInt(elementToGet.value);
+          if (!isNaN(tempAge)) {
+            stringArray[changed[i]] = tempAge;
+          }
+          else {
+            validInput = false;
+          }
         }
         else {
-          validInput = false;
+          stringArray[changed[i]] = elementToGet.value;
         }
       }
+      if (validInput) {
+        db.endpoints.Teachers.patch({ "id": userId }, stringArray);
+        alert("User info was saved");
+      }
       else {
-        stringArray[changed[i]] = elementToGet.value;
+        alert("Check input and make sure it is the right format");
       }
     }
-    if (validInput) {
-      db.endpoints.Teachers.patch({ "id": userId }, stringArray);
-      alert("User info was saved");
-    }
-    else {
-      alert("Check input and make sure it is the right format");
-    }
   }
+
   const userDB = JSON.parse(localStorage.getItem("user"));
   const userId = userDB.id;
-  //const userDB = {};
+  
   console.log(userDB);
   return (
-    <div>
+    <div className="account-page">
+      <div className="edit-img">
+        <img class="account-img" src={profile} alt="User profile"/>
+        <img 
+          class="upload-img" 
+          src={photo} 
+          alt="Upload photo" 
+          onClick={e => alert("This will allow the user to upload a new image")}/>
+      </div>
       <Container>
-        <div class="account-title">
-          Account Overview
-        </div>
-        <img class="account-img" src={profile} alt="User profile" />
-        <button class="account-img-button"
-          onClick={e => alert("This will allow user to upload new image")}
-        >
-          edit image
-        </button>
         <Row>
           <Col>
             <InputGroup className="mb-3">
-              <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">
+              <InputGroup.Prepend >
+                <InputGroup.Text id="basic-addon3" className="input-group-prepend">
                   First Name:
-              </InputGroup.Text>
+                </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
                 id="firstName"
@@ -92,9 +96,9 @@ function Account(props) {
           <Col>
             <InputGroup className="mb-3">
               <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">
+                <InputGroup.Text id="basic-addon3" className="input-group-prepend">
                   Last Name:
-            </InputGroup.Text>
+                </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
                 id="lastName"
@@ -109,9 +113,9 @@ function Account(props) {
           <Col>
             <InputGroup className="mb-3">
               <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">
+                <InputGroup.Text id="basic-addon3" className="input-group-prepend">
                   Age:
-            </InputGroup.Text>
+                </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
                 id="age"
@@ -126,9 +130,9 @@ function Account(props) {
           <Col>
             <InputGroup className="mb-3">
               <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">
+                <InputGroup.Text id="basic-addon3" className="input-group-prepend">
                   UserName:
-            </InputGroup.Text>
+                </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
                 id="userName"
@@ -143,9 +147,9 @@ function Account(props) {
           <Col>
             <InputGroup className="mb-3">
               <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">
+                <InputGroup.Text id="basic-addon3" className="input-group-prepend">
                   Password:
-            </InputGroup.Text>
+                </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
                 type="password"
@@ -157,14 +161,15 @@ function Account(props) {
             </InputGroup>
           </Col>
         </Row>
-        <button class="account-change-button"
+        <div class="standard-button account-change-button"
           id="accountSaveButton"
           disabled={disabled}
           onClick={handleSubmit}
         >
           Save
-        </button>
+        </div>
       </Container>
+
     </div>
   );
 }

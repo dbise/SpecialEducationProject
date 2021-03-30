@@ -34,7 +34,7 @@
     padding-left: 45px;
 }
 .divider {
-    position: fixed;
+    position: absolute;
     right: 85px;
     top: 16px;
     color: silver;
@@ -42,7 +42,7 @@
     font-size: 25px;
 }
 .profile {
-    position: fixed;
+    position: absolute;
     cursor: pointer;
     width: auto;
     height: 50px;
