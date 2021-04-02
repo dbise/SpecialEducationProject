@@ -1,6 +1,5 @@
 {
-  "Teachers": [
-    {
+  "Teachers": [{
       "id": 1,
       "firstName": "Arwen",
       "lastName": "Undómiel",
@@ -17,7 +16,31 @@
       "password": "deathstar"
     }
   ],
-  "Students": [
+  "Students": [{
+      "id": 970,
+      "firstName": "Lowe",
+      "lastName": "Suarez",
+      "age": 9,
+      "birthday": "Fri Nov 13 1970",
+      "grade": 1,
+      "gender": "male",
+      "email": "lowesuarez@gmail.com",
+      "phone": "+1 (848) 596-2795",
+      "address1": "895 Linwood Street",
+      "address2": "",
+      "city": "Callaghan",
+      "state": "Indiana",
+      "zip": 8297,
+      "about": "Et aliquip est laboris duis sunt culpa minim esse labore occaecat irure. Ex cupidatat veniam eiusmod consectetur ad sit laboris sint velit ut. Consequat enim sit incididunt quis proident enim est ex ut laborum id. Exercitation ad mollit sint culpa non est commodo est. Duis tempor non qui officia aute pariatur. Cillum elit eu nisi fugiat deserunt mollit dolor qui ea aute anim.\r\n",
+      "guardian1": "Dotson Scott",
+      "guardian2": "Glenn Velez",
+      "teacherId": 1,
+      "assigned": [
+        1,
+        2
+      ]
+    },
+
     {
       "id": 4281,
       "firstName": "Sophia",
@@ -295,34 +318,9 @@
         1,
         2
       ]
-    },
-    {
-      "id": 970,
-      "firstName": "Lowe",
-      "lastName": "Suarez",
-      "age": 9,
-      "birthday": "Fri Nov 13 1970",
-      "grade": 1,
-      "gender": "male",
-      "email": "lowesuarez@gmail.com",
-      "phone": "+1 (848) 596-2795",
-      "address1": "895 Linwood Street",
-      "address2": "",
-      "city": "Callaghan",
-      "state": "Indiana",
-      "zip": 8297,
-      "about": "Et aliquip est laboris duis sunt culpa minim esse labore occaecat irure. Ex cupidatat veniam eiusmod consectetur ad sit laboris sint velit ut. Consequat enim sit incididunt quis proident enim est ex ut laborum id. Exercitation ad mollit sint culpa non est commodo est. Duis tempor non qui officia aute pariatur. Cillum elit eu nisi fugiat deserunt mollit dolor qui ea aute anim.\r\n",
-      "guardian1": "Dotson Scott",
-      "guardian2": "Glenn Velez",
-      "teacherId": 1,
-      "assigned": [
-        1,
-        2
-      ]
     }
   ],
-  "Assignments": [
-    {
+  "Assignments": [{
       "id": 1,
       "name": "Assignment1",
       "description": "This assignment will test the students grammar and punctuation skills.",
@@ -357,14 +355,27 @@
       "description": "This is the fourth assignment..."
     }
   ],
-  "Completed": {
-    "studentId": 970,
-    "assignmentId": 1,
-    "studentAnswers": [
-      "Candy taste sweets.",
-      "Im going get a new cat.",
-      "she like dogs.",
-      "My favorite coler is red"
-    ]
-  }
+  "Completed": [{
+      "studentId": 970,
+      "assignmentId": 1,
+      "studentAnswers": [
+        "Candy taste sweets.",
+        "Im going get a new cat.",
+        "she like dogs.",
+        "My favorite coler is red"
+      ]
+    },
+    {
+      "studentId": 4281,
+      "assignmentId": 1,
+      "studentAnswers": [
+        "Candy tastes sweets.",
+        "Im gong get new kat.",
+        "he lik dog",
+        "ny favorite coler is rede"
+      ]
+    }
+
+
+  ]
 }

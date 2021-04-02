@@ -4,7 +4,7 @@ import { db } from '../API'
 import deleteIcon from '../resources/delete.png'
 import './css/AssignmentList.css'
 import './css/StudentAssignmentList.css'
-import EditAssignment from './EditAssignment'
+import TakeAssignment from './TakeAssignment'
 
 class AssignmentList extends React.Component {
     constructor(props) {
@@ -15,35 +15,38 @@ class AssignmentList extends React.Component {
     componentDidMount() {
         db.endpoints.Assignments.getAll().then(
             assignments => {
-                console.log(this.props.student.assigned)
-                console.log(assignments.data)
-                this.assignmentList = assignments.data.filter(a => this.props.student.assigned.includes(a.id));
-                console.log(this.assignmentList)
+                db.endpoints.Completed.getAll().then(
+                    completed => {
+                        // console.log(this.props.student.assigned)
+                        console.log(assignments.data, completed.data)
+                        this.assignmentList = assignments.data.filter(a => this.props.student.assigned.includes(a.id));
+                        // console.log(this.assignmentList)
 
-                if (this.assignmentList.length > 0) {
-                    this.assignmentsHtml = this.renderList();
-                }
-                else {
-                    ReactDOM.render((
-                        <div>
-                            <h3>This student has nothing assigned to them!</h3>
-                            {/* <div className='cancel' onClick={() => { window.location.reload(false) }}>Back</div> */}
+                        if (this.assignmentList.length > 0) {
+                            this.assignmentsHtml = this.renderList();
+                        }
+                        else {
+                            ReactDOM.render((
+                                <div>
+                                    <h3>This student has nothing assigned to them!</h3>
+                                    {/* <div className='cancel' onClick={() => { window.location.reload(false) }}>Back</div> */}
 
-                        </div>
-                    ), document.querySelector("#assignment-list"));
-                }
-            }
-        )
+                                </div>
+                            ), document.querySelector("#assignment-list"));
+                        }
+                    }
+                )
+            })
     }
 
-    showEditAssignment(assignment) {
+    showTakeAssignment(assignment) {
         console.log(assignment)
         ReactDOM.render((
             <div id='students' className='students'>
                 <div id="students-dialog">
                     <div>
                         <div className='dialog-mask'></div>
-                        <EditAssignment assignmentData={assignment} />
+                        <TakeAssignment assignmentData={assignment} />
                     </div>
                 </div>
             </div>
@@ -68,7 +71,7 @@ class AssignmentList extends React.Component {
                         src={deleteIcon} alt="Delete Icon"
                         onClick={() => { this.handleDelete(assignment) }}
                     />
-                    <div key={id} className="assignment-list-item" onClick={() => { this.showEditAssignment(assignment) }}>
+                    <div key={id} className="assignment-list-item" onClick={() => { this.showTakeAssignment(assignment) }}>
                         <div className="assignment-name"> {name} </div>
                         <div className="assignment-description"> {description} </div>
                     </div>

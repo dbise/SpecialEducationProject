@@ -63,6 +63,10 @@ db.createEntity({
 db.createEntity({
   name: 'Assignments'
 })
+db.createEntity({
+  name: 'Completed'
+})
+
 
 //export db object
 export {

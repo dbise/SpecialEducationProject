@@ -1,0 +1,103 @@
+.take-assignment-dialog {
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    min-width: 550px;
+    min-height: 550px;
+    top: 40px;
+    left: 50px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.take-assignment-title {
+    position: relative;
+    font-size: 25px;
+    color: dimgray;
+    top: 20px;
+    left: 20px;
+    padding: 15px;
+}
+
+/* .take-assignment-title:hover {
+    border: 2px solid darkgray;
+}
+
+.take-assignment-title:focus {
+    outline-color: lightskyblue;
+} */
+
+.take-assignment-description {
+    position: relative;
+    resize: both;
+    height: 50px;
+    width: 500px;
+    color: dimgray;
+    top: 35px;
+    left: 20px;
+    padding: 15px;
+}
+
+.take-assignment-questions-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 20px;
+    height: 75%;
+    width: 75%;
+    min-width: 900px;
+    margin: 15px;
+    overflow-y: scroll;
+}
+
+.take-assignment-response {
+    display: flex;
+    flex-direction: column;
+    left: 20px;
+    height: 75px;
+    width: 500px;
+    min-width: 900px;
+    margin: 15px;
+    overflow-y: scroll;
+    border: 2px solid lightgray;
+}
+
+
+.take-assignment-response:hover {
+    border: 2px solid darkgray;
+}
+
+.take-assignment-response:focus {
+    outline-color: lightskyblue;
+}
+
+.add-problems {
+    position: relative;
+    color: slategray;
+    margin-left: 50px;
+    margin-top: 75px;
+}
+
+.save {
+    position: inherit;
+    bottom: 25px;
+    right: 150px;
+    width: 100px;
+    margin: 10px;
+}
+
+.cancel {
+    position: inherit;
+    bottom: 25px;
+    right: 25px;
+    line-height: 50px;
+    width: 100px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .create-assignment-dialog {
+        width: 90%;
+        height: 90%;
+    }
+}
