@@ -1,5 +1,6 @@
 {
-  "Teachers": [{
+  "Teachers": [
+    {
       "id": 1,
       "firstName": "Arwen",
       "lastName": "Undómiel",
@@ -16,31 +17,7 @@
       "password": "deathstar"
     }
   ],
-  "Students": [{
-      "id": 970,
-      "firstName": "Lowe",
-      "lastName": "Suarez",
-      "age": 9,
-      "birthday": "Fri Nov 13 1970",
-      "grade": 1,
-      "gender": "male",
-      "email": "lowesuarez@gmail.com",
-      "phone": "+1 (848) 596-2795",
-      "address1": "895 Linwood Street",
-      "address2": "",
-      "city": "Callaghan",
-      "state": "Indiana",
-      "zip": 8297,
-      "about": "Et aliquip est laboris duis sunt culpa minim esse labore occaecat irure. Ex cupidatat veniam eiusmod consectetur ad sit laboris sint velit ut. Consequat enim sit incididunt quis proident enim est ex ut laborum id. Exercitation ad mollit sint culpa non est commodo est. Duis tempor non qui officia aute pariatur. Cillum elit eu nisi fugiat deserunt mollit dolor qui ea aute anim.\r\n",
-      "guardian1": "Dotson Scott",
-      "guardian2": "Glenn Velez",
-      "teacherId": 1,
-      "assigned": [
-        1,
-        2
-      ]
-    },
-
+  "Students": [
     {
       "id": 4281,
       "firstName": "Sophia",
@@ -318,9 +295,34 @@
         1,
         2
       ]
+    },
+    {
+      "id": 970,
+      "firstName": "Lowe",
+      "lastName": "Suarez",
+      "age": 9,
+      "birthday": "Fri Nov 13 1970",
+      "grade": 1,
+      "gender": "male",
+      "email": "lowesuarez@gmail.com",
+      "phone": "+1 (848) 596-2795",
+      "address1": "895 Linwood Street",
+      "address2": "",
+      "city": "Callaghan",
+      "state": "Indiana",
+      "zip": 8297,
+      "about": "Et aliquip est laboris duis sunt culpa minim esse labore occaecat irure. Ex cupidatat veniam eiusmod consectetur ad sit laboris sint velit ut. Consequat enim sit incididunt quis proident enim est ex ut laborum id. Exercitation ad mollit sint culpa non est commodo est. Duis tempor non qui officia aute pariatur. Cillum elit eu nisi fugiat deserunt mollit dolor qui ea aute anim.\r\n",
+      "guardian1": "Dotson Scott",
+      "guardian2": "Glenn Velez",
+      "teacherId": 1,
+      "assigned": [
+        1,
+        2
+      ]
     }
   ],
-  "Assignments": [{
+  "Assignments": [
+    {
       "id": 1,
       "name": "Assignment1",
       "description": "This assignment will test the students grammar and punctuation skills.",
@@ -342,20 +344,57 @@
     {
       "id": 2,
       "name": "Assignment2",
-      "description": "This is the second assignment..."
+      "description": "This assignment will test the students counting and combining coins.",
+      "type": "Math",
+      "subType": "Counting",
+      "Questions": [
+        "5 Nickel, 2 Penny",
+        "2 Quarter",
+        "1 Dime, 1 Nickel"
+      ],
+      "Answers": [
+        "0.27",
+        "0.50",
+        "0.15"
+      ]
     },
     {
       "id": 3,
       "name": "Assignment3",
-      "description": "This is the third assignment..."
+      "description": "This assessment will test the students ability to recognize US currency",
+      "type": "Math",
+      "subType": "Coin Recognition",
+      "Questions": [
+        "0.05",
+        "0.25",
+        "0.01"
+      ],
+      "Answers": [
+        "Nickel",
+        "Quarter",
+        "Penny"
+      ]
     },
     {
       "id": 4,
       "name": "Assignment4",
-      "description": "This is the fourth assignment..."
+      "description": "This assignment will test the students counting and combining coins.",
+      "type": "Math",
+      "subType": "Counting",
+      "Questions": [
+        "2 Nickel, 2 Penny",
+        "1 Quarter, 2 Dime",
+        "1 Dime"
+      ],
+      "Answers": [
+        "0.12",
+        "0.45",
+        "0.10"
+      ]
     }
   ],
-  "Completed": [{
+  "Completed": [
+    {
       "studentId": 970,
       "assignmentId": 1,
       "studentAnswers": [
@@ -375,7 +414,5 @@
         "ny favorite coler is rede"
       ]
     }
-
-
   ]
 }
