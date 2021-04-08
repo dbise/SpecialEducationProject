@@ -324,7 +324,7 @@
   "Assignments": [
     {
       "id": 1,
-      "name": "Assignment1",
+      "name": "Grammar Assignment 1",
       "description": "This assignment will test the students grammar and punctuation skills.",
       "type": "Writing",
       "subType": "Sentences",
@@ -343,7 +343,7 @@
     },
     {
       "id": 2,
-      "name": "Assignment2",
+      "name": "Math Assignment 1",
       "description": "This assignment will test the students counting and combining coins.",
       "type": "Math",
       "subType": "Counting",
@@ -360,7 +360,7 @@
     },
     {
       "id": 3,
-      "name": "Assignment3",
+      "name": "Math Assignment 2",
       "description": "This assessment will test the students ability to recognize US currency",
       "type": "Math",
       "subType": "Coin Recognition",
@@ -377,7 +377,7 @@
     },
     {
       "id": 4,
-      "name": "Assignment4",
+      "name": "Math Assignment 3",
       "description": "This assignment will test the students counting and combining coins.",
       "type": "Math",
       "subType": "Counting",

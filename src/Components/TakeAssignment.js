@@ -45,13 +45,16 @@ class TakeAssignment extends React.Component {
 
         return (
             <div className='take-assignment-dialog'>
-                <div>
-                    <div className='take-assignment-title'>{this.props.assignmentData.name}</div>
+                <div className="take-assignment-header">
+                    <div>
+                        <div className='take-assignment-title'>{this.props.assignmentData.name}</div>
+                    </div>
+                    <div >
+                        <div className='take-assignment-description'>{this.props.assignmentData.description}</div>
+                    </div>
                 </div>
                 <div >
-                    <div className='take-assignment-description'>{this.props.assignmentData.description}</div>
-                </div>
-                <div >
+                    <div className="questions-list-title"> Questions </div>
                     <div className='take-assignment-questions-list'>{questionsJsx}</div>
                 </div>
                 <div className='standard-button save' onClick={this.handleSubmit}>

@@ -26,29 +26,48 @@ class EditAssignment extends React.Component {
     }
 
     render() {
+        const questionsJsx = this.props.assignmentData.Questions.map((question, index) => {
+            return (
+                <div key={index} >
+                    <input
+                            className='assignment-question'
+                            type="text"
+                            defaultValue={question}
+                            // ref={myinput => (this.assignmentName = myinput)}
+                        />
+                </div>
+            )
+        });
+
         return (
             <div className='edit-assignment-dialog'>
-                <div>
-                    <input
-                        className='edit-assignment-title'
-                        type="text"
-                        defaultValue={ this.props.assignmentData.name }
-                        ref={myinput => (this.assignmentName = myinput)}
-                    />
-                    <img
+                <div className="edit-assignment-header">
+                    <div>
+                        <input
+                            className='edit-assignment-title'
+                            type="text"
+                            defaultValue={ this.props.assignmentData.name }
+                            ref={myinput => (this.assignmentName = myinput)}
+                        />
+                        <img
                             className="delete-assignment"
                             src={deleteIcon} alt="Delete Icon"
                             onClick={() => {this.handleDelete(this.props.assignmentData)}}
-                    />
+                        />
+                    </div>
+                    <div >
+                        <textarea
+                            className='edit-assignment-description'
+                            type="text"
+                            cols="75"
+                            defaultValue={ this.props.assignmentData.description }
+                            ref={myinput => (this.description = myinput)}
+                        />
+                    </div>
                 </div>
-                <div >
-                    <textarea
-                        className='edit-assignment-description'
-                        type="text"
-                        cols="75"
-                        defaultValue={ this.props.assignmentData.description }
-                        ref={myinput => (this.description = myinput)}
-                    />
+                <div>
+                    <div className="questions-list-title"> Questions </div>
+                    <div className='assignment-questions-list'>{questionsJsx}</div>
                 </div>
                 <div className='add-problems'>
                     + Add a problem

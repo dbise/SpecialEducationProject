@@ -9,13 +9,24 @@
     border-radius: 15px;
     background-color: white;
 }
+@media screen and (max-width: 1000px){
+    .edit-assignment-dialog {
+        width: 90%;
+        height: 90%;
+    }
+}
+.edit-assignment-header {
+    padding-bottom: 50px;
+    border-bottom: 2px solid silver;
+    margin: 0px 150px 0px 25px;
+}
 .edit-assignment-title {
     position: relative;
     font-size: 25px;
     color: dimgray;
     top: 20px;
-    left: 20px;
     padding: 15px;
+    border: 2px solid lightgray;
 }
 .edit-assignment-title:hover {
     border: 2px solid darkgray;
@@ -31,8 +42,8 @@
     overflow: auto;
     color: dimgray;
     top: 35px;
-    left: 20px;
     padding: 15px;
+    border: 2px solid lightgray;
 }
 .edit-assignment-description:hover {
     border: 2px solid darkgray;
@@ -40,11 +51,48 @@
 .edit-assignment-description:focus {
     outline-color: lightskyblue;
 }
+
+.questions-list-title {
+    font-size: 25px;
+    color: dimgray;
+    margin: 25px 150px 50px 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    border-bottom: 2px solid silver;
+}
+.assignment-questions-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 150px 50px 25px;
+    max-height: 400px;
+    max-width: 90%;
+    overflow-y: scroll;
+}
+.assignment-questions-list::-webkit-scrollbar {
+    display: none;
+}
+@media screen and (max-height: 800px){
+    .assignment-questions-list {
+        max-height: 300px;
+    }
+}
+.assignment-question {
+    margin-top: 25px;
+    border: 2px solid lightgray;
+}
+.assignment-question:hover {
+    border: 2px solid darkgray;
+}
+.assignment-question:focus {
+    outline-color: lightskyblue;
+}
 .add-problems {
-    position: relative;
+    position: inherit;
+    cursor: pointer;
     color: slategray;
     margin-left: 50px;
-    margin-top: 75px;
+    padding-top: 25px;
+    bottom: 75px;
 }
 .save {
     position: inherit;
@@ -60,10 +108,4 @@
     line-height: 50px;
     width: 100px;
     margin: 10px;
-}
-@media screen and (max-width: 1000px){
-    .create-assignment-dialog {
-        width: 90%;
-        height: 90%;
-    }
 }
