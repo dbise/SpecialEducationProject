@@ -20,11 +20,7 @@ class TakeAssignment extends React.Component {
     }
 
     async handleChange(e) {
-        this.valueChanged = true;
-        try {
-            document.querySelector(".save").className = "standard-button form-submit-changed"
-        }
-        catch { }
+        e.target.style.border = "2px solid lightgray"
 
     }
     async handleSubmit() {

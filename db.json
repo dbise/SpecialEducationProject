@@ -1,6 +1,5 @@
 {
-  "Teachers": [
-    {
+  "Teachers": [{
       "id": 1,
       "firstName": "Arwen",
       "lastName": "Undómiel",
@@ -17,8 +16,7 @@
       "password": "deathstar"
     }
   ],
-  "Students": [
-    {
+  "Students": [{
       "id": 4281,
       "firstName": "Sophia",
       "lastName": "Rocha",
@@ -321,8 +319,7 @@
       ]
     }
   ],
-  "Assignments": [
-    {
+  "Assignments": [{
       "id": 1,
       "name": "Grammar Assignment 1",
       "description": "This assignment will test the students grammar and punctuation skills.",
@@ -393,8 +390,7 @@
       ]
     }
   ],
-  "Completed": [
-    {
+  "Completed": [{
       "id": 1,
       "studentId": 970,
       "assignmentId": 1,
@@ -415,27 +411,6 @@
         "he lik dog",
         "ny favorite coler is rede"
       ]
-    },
-    {
-      "studentId": 4281,
-      "assignmentId": 1,
-      "studentAnswers": [
-        "asdf",
-        "asdf",
-        "asdf",
-        "qewrdvg"
-      ],
-      "id": 3
-    },
-    {
-      "studentId": 1666,
-      "assignmentId": 2,
-      "studentAnswers": [
-        "erqwer",
-        "afgadfdg",
-        "sdfhsdgh"
-      ],
-      "id": 4
     }
   ]
 }
