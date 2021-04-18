@@ -13,7 +13,7 @@ function Account(props) {
   var changed = [];
   const [disabled, setDisabled] = useState(true);
 
-  if(!disabled) {
+  if (!disabled) {
     try {
       document.querySelector(".account-change-button").className = "standard-button account-change-button-changed"
     }
@@ -62,17 +62,17 @@ function Account(props) {
 
   const userDB = JSON.parse(localStorage.getItem("user"));
   const userId = userDB.id;
-  
+
   console.log(userDB);
   return (
     <div className="account-page">
       <div className="edit-img">
-        <img class="account-img" src={profile} alt="User profile"/>
-        <img 
-          class="upload-img" 
-          src={photo} 
-          alt="Upload photo" 
-          onClick={e => alert("This will allow the user to upload a new image")}/>
+        <img class="account-img" src={profile} alt="User profile" />
+        <img
+          class="upload-img"
+          src={photo}
+          alt="Upload"
+          onClick={e => alert("This will allow the user to upload a new image")} />
       </div>
       <Container>
         <Row>

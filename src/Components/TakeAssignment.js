@@ -1,12 +1,16 @@
 import React from 'react'
 import './css/TakeAssignment.css'
+import './css/ViewStudent.css'
 import { db } from '../API'
+import $ from 'jquery'
 
 class TakeAssignment extends React.Component {
     constructor() {
         super()
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.valueChanged = false;
     }
+
 
     async handleDelete(assignment) {
         if (window.confirm('Are you sure you want to delete this assignment?')) {
@@ -15,30 +19,62 @@ class TakeAssignment extends React.Component {
         }
     }
 
+    async handleChange(e) {
+        this.valueChanged = true;
+        try {
+            document.querySelector(".save").className = "standard-button form-submit-changed"
+        }
+        catch { }
+
+    }
     async handleSubmit() {
-        await db.endpoints.Assignments.patch(this.props.assignmentData, {
-            "name": this.assignmentName.value,
-            "description": this.description.value
+        const answerInputs = $(".take-assignment-response").toArray()
+        let failedValidation = false
+        // console.log(answerInputs)
+
+        let answers = answerInputs.map((things, stuff) => {
+
+            if (things.value === "") {
+                things.style.border = "2px solid red"
+                failedValidation = true
+            }
+            else {
+                things.style.border = "2px solid lightgray"
+            }
+            return things.value
         })
 
-        window.location.reload(false)
+        if (failedValidation !== true) {
+            // console.log(this.props)
+            await db.endpoints.Completed.create({
+                "studentId": this.props.studentData.id,
+                "assignmentId": this.props.assignmentData.id,
+                "studentAnswers": answers
+            })
+            window.location.reload(false)
+        }
+
+
     }
 
     render() {
-        console.log(this.props.assignmentData.Questions)
-        const questionsJsx = this.props.assignmentData.Questions.map((question, index) => {
+        // console.log(this.props.assignmentData)
+        const questionsJsx = this.props.assignmentData.Questions?.map((question, index) => {
             return (
                 <div key={index} >
-                    <div>{question}</div>
-                    <div >
-                        <textarea
-                            placeholder="Type in your answer"
-                            className='take-assignment-response'
-                            type="text"
-                            cols="75"
-                            ref={myinput => (this.description = myinput)}
-                        />
-                    </div>
+                    <label>{question}
+                        <div >
+                            <textarea
+                                placeholder="Type in your answer"
+                                className='take-assignment-response'
+                                type="text"
+                                cols="75"
+                                onChange={this.handleChange}
+                                ref={myInput => (this.answer = myInput)
+                                }
+                            />
+                        </div>
+                    </label>
                 </div>
             )
         });

@@ -18,7 +18,7 @@ class AssignmentList extends React.Component {
                 db.endpoints.Completed.getAll().then(
                     completed => {
                         // console.log(this.props.student.assigned)
-                        console.log(assignments.data, completed.data)
+                        // console.log(assignments.data, completed.data)
                         this.assignmentList = assignments.data.filter(a => this.props.student.assigned.includes(a.id));
                         // console.log(this.assignmentList)
 
@@ -40,13 +40,13 @@ class AssignmentList extends React.Component {
     }
 
     showTakeAssignment(assignment) {
-        console.log(assignment)
+        // console.log(assignment)
         ReactDOM.render((
             <div id='students' className='students'>
                 <div id="students-dialog">
                     <div>
                         <div className='dialog-mask'></div>
-                        <TakeAssignment assignmentData={assignment} />
+                        <TakeAssignment assignmentData={assignment} studentData={this.props.student} />
                     </div>
                 </div>
             </div>
